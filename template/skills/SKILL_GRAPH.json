@@ -1,0 +1,7423 @@
+{
+  "generated_at": "2026-06-01T17:04:55.386169+00:00",
+  "total_skills": 143,
+  "total_edges": 561,
+  "total_explicit_edges": 106,
+  "total_implicit_edges": 455,
+  "total_implicit_edges_dropped": 0,
+  "min_shared_entities": 3,
+  "domains": [
+    "agents",
+    "cv",
+    "data",
+    "deep-learning",
+    "frontend",
+    "infra",
+    "llm",
+    "ml-core",
+    "mlops",
+    "nlp",
+    "rag",
+    "security"
+  ],
+  "nodes": [
+    {
+      "name": "adr-new",
+      "entities": [
+        "claude",
+        "pytest"
+      ],
+      "domains": [
+        "ml-core",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 116,
+      "relationships": []
+    },
+    {
+      "name": "agent-browser-cli",
+      "entities": [
+        "anthropic",
+        "claude",
+        "github"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "you need browser automation that must not depend on the operator's"
+      ],
+      "lines": 244,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "agent-browser-cli"
+        },
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        }
+      ]
+    },
+    {
+      "name": "agile-ml",
+      "entities": [
+        "docker",
+        "mlflow",
+        "terraform",
+        "xgboost"
+      ],
+      "domains": [
+        "ml-core",
+        "mlops"
+      ],
+      "triggers": [
+        "managing ML project sprints, estimating ML tasks, or adapting Scrum for data science"
+      ],
+      "lines": 671,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "ai-agents-engineering",
+      "entities": [
+        "anthropic",
+        "autogen",
+        "claude",
+        "crewai",
+        "langchain",
+        "langgraph",
+        "langsmith",
+        "llamaindex",
+        "openai",
+        "rag"
+      ],
+      "domains": [
+        "agents",
+        "rag"
+      ],
+      "triggers": [
+        "building autonomous AI systems, chatbots with tools, or multi-agent workflows",
+        "user asks about weather, temperature, or forecast"
+      ],
+      "lines": 454,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "research-synth"
+        },
+        {
+          "type": "extends",
+          "target": "grill-with-docs"
+        }
+      ]
+    },
+    {
+      "name": "aidesigner-frontend",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "frontend",
+        "agents"
+      ],
+      "triggers": [
+        "the user wants to create or redesign a frontend, landing page, dashboard, marketing page, or other UI with AIDesigner"
+      ],
+      "lines": 229,
+      "relationships": [
+        {
+          "type": "alternative_to",
+          "target": "transilience-api-security"
+        }
+      ]
+    },
+    {
+      "name": "anthropic-sdk",
+      "entities": [
+        "anthropic",
+        "aws",
+        "bedrock",
+        "claude",
+        "github",
+        "rag"
+      ],
+      "domains": [
+        "nlp",
+        "agents"
+      ],
+      "triggers": [
+        "building applications that call Claude directly via API,",
+        "the user asks about weather conditions"
+      ],
+      "lines": 1337,
+      "relationships": []
+    },
+    {
+      "name": "arca-vault-sync",
+      "entities": [
+        "claude",
+        "git",
+        "github"
+      ],
+      "domains": [
+        "agents",
+        "mlops"
+      ],
+      "triggers": [
+        "the user says 'sync vault', 'backup vault', '/arca-vault-sync', or whenever ARCA artifacts in Obsidian need versioning"
+      ],
+      "lines": 56,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-prompt-versioning"
+        }
+      ]
+    },
+    {
+      "name": "auto-tune-review",
+      "entities": [
+        "claude",
+        "git"
+      ],
+      "domains": [
+        "agents",
+        "llm"
+      ],
+      "triggers": [
+        "⟦ user_name ⟧ says /auto-tune-review <agent-name>, revisa el agent X que está pending, prepárame contexto para auto-tune, or after the auto-tune-aging-detector hook surfaces a [AUTO-TUNE WARN] or [AUTO-TUNE "
+      ],
+      "lines": 120,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "bb-methodology",
+      "entities": [
+        "aws",
+        "redis",
+        "s3"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "asking \"what should I do next\" or \"where am I in the process"
+      ],
+      "lines": 352,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "transilience-hackerone"
+        },
+        {
+          "type": "alternative_to",
+          "target": "mcp-development"
+        },
+        {
+          "type": "alternative_to",
+          "target": "observability-prompt-versioning"
+        },
+        {
+          "type": "alternative_to",
+          "target": "ml-code-store-promote"
+        }
+      ]
+    },
+    {
+      "name": "bug-bounty",
+      "entities": [
+        "aws",
+        "claude",
+        "docker",
+        "elasticsearch",
+        "express",
+        "flask",
+        "git",
+        "github",
+        "gitlab",
+        "kubernetes",
+        "pytorch",
+        "redis",
+        "s3"
+      ],
+      "domains": [
+        "frontend",
+        "infra"
+      ],
+      "triggers": [],
+      "lines": 1552,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "transilience-cve-poc-generator"
+        },
+        {
+          "type": "depends_on",
+          "target": "transilience-hackerone"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "alternative_to",
+          "target": "redteam-new"
+        },
+        {
+          "type": "alternative_to",
+          "target": "web2-vuln-classes"
+        }
+      ]
+    },
+    {
+      "name": "cicd",
+      "entities": [
+        "black",
+        "docker",
+        "github",
+        "gitlab",
+        "mypy",
+        "pytest",
+        "ruff",
+        "terraform"
+      ],
+      "domains": [
+        "infra",
+        "nlp"
+      ],
+      "triggers": [
+        "setting up pipelines, optimizing builds, or implementing deployment automation"
+      ],
+      "lines": 668,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "obsidian-status"
+        }
+      ]
+    },
+    {
+      "name": "clarify",
+      "entities": [
+        "claude",
+        "git",
+        "ruff"
+      ],
+      "domains": [
+        "agents",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 105,
+      "relationships": []
+    },
+    {
+      "name": "claude-code-patterns",
+      "entities": [
+        "anthropic",
+        "aws",
+        "claude",
+        "git",
+        "github",
+        "langchain",
+        "langgraph",
+        "langsmith",
+        "pruning",
+        "pytest",
+        "rag",
+        "spark"
+      ],
+      "domains": [
+        "agents",
+        "ml-core"
+      ],
+      "triggers": [
+        "creating new agents,"
+      ],
+      "lines": 948,
+      "relationships": []
+    },
+    {
+      "name": "claude-config-audit",
+      "entities": [
+        "anthropic",
+        "claude",
+        "openai"
+      ],
+      "domains": [
+        "agents",
+        "mlops"
+      ],
+      "triggers": [],
+      "lines": 91,
+      "relationships": []
+    },
+    {
+      "name": "cybersecurity",
+      "entities": [
+        "aws",
+        "flask",
+        "git",
+        "github",
+        "redis"
+      ],
+      "domains": [
+        "llm",
+        "security"
+      ],
+      "triggers": [
+        "working on security labs, CTF flags, or auditing code for vulnerabilities"
+      ],
+      "lines": 938,
+      "relationships": []
+    },
+    {
+      "name": "dashboard-build",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 132,
+      "relationships": []
+    },
+    {
+      "name": "deep-agents-core",
+      "entities": [
+        "claude",
+        "lambda",
+        "langchain",
+        "langgraph",
+        "pytest"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "building ANY Deep Agents application"
+      ],
+      "lines": 424,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "pentest-forensics-analyst"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "ml-code-store-promote"
+        }
+      ]
+    },
+    {
+      "name": "deep-agents-memory",
+      "entities": [
+        "anthropic",
+        "claude",
+        "lambda",
+        "langchain",
+        "langgraph"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "your Deep Agent needs memory, persistence, or filesystem access"
+      ],
+      "lines": 305,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "deep-agents-memory"
+        }
+      ]
+    },
+    {
+      "name": "deep-agents-orchestration",
+      "entities": [
+        "langchain",
+        "langgraph"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "using subagents, task planning, or human approval in Deep Agents"
+      ],
+      "lines": 471,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        },
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        },
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        }
+      ]
+    },
+    {
+      "name": "design-motion-principles",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "frontend",
+        "agents"
+      ],
+      "triggers": [
+        "reviewing UI animations, transitions, hover states, or any motion design work"
+      ],
+      "lines": 203,
+      "relationships": []
+    },
+    {
+      "name": "diagnose",
+      "entities": [
+        "git"
+      ],
+      "domains": [
+        "agents",
+        "ml-core"
+      ],
+      "triggers": [
+        "user says \"diagnose this\" / \"debug this\", reports a bug, says something is broken/throwing/failing, or describes a performance regression"
+      ],
+      "lines": 117,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "python-init"
+        }
+      ]
+    },
+    {
+      "name": "dl-engineering",
+      "entities": [
+        "numpy",
+        "pytorch",
+        "transformers"
+      ],
+      "domains": [
+        "deep-learning",
+        "ml-core"
+      ],
+      "triggers": [
+        "building neural networks, optimizing training, or debugging GPU/CUDA issues"
+      ],
+      "lines": 774,
+      "relationships": []
+    },
+    {
+      "name": "docker-advanced",
+      "entities": [
+        "docker",
+        "git",
+        "github",
+        "huggingface",
+        "openai",
+        "pytorch",
+        "redis",
+        "tensorflow",
+        "transformers",
+        "vllm"
+      ],
+      "domains": [
+        "deep-learning",
+        "infra"
+      ],
+      "triggers": [
+        "containerizing ML applications, hardening containers for security, or optimizing Docker for production"
+      ],
+      "lines": 822,
+      "relationships": []
+    },
+    {
+      "name": "ecc-agent-introspection",
+      "entities": [
+        "git"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "an agent run is failing repeatedly, consuming tokens without progress, looping on the same tools, or drifting away from the intended task"
+      ],
+      "lines": 152,
+      "relationships": []
+    },
+    {
+      "name": "ecc-eval-harness",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "ml-core",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 235,
+      "relationships": []
+    },
+    {
+      "name": "ecc-verification-loop",
+      "entities": [
+        "claude",
+        "git",
+        "ruff"
+      ],
+      "domains": [
+        "frontend",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 125,
+      "relationships": []
+    },
+    {
+      "name": "edge-ml",
+      "entities": [
+        "distillation",
+        "keras",
+        "numpy",
+        "onnx",
+        "pruning",
+        "pytorch",
+        "quantization",
+        "tensorflow",
+        "tensorrt",
+        "transformers"
+      ],
+      "domains": [
+        "deep-learning",
+        "ml-core"
+      ],
+      "triggers": [
+        "deploying models to mobile devices, IoT, or resource-constrained environments"
+      ],
+      "lines": 681,
+      "relationships": []
+    },
+    {
+      "name": "email-triage",
+      "entities": [
+        "claude",
+        "github"
+      ],
+      "domains": [
+        "nlp",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 141,
+      "relationships": []
+    },
+    {
+      "name": "emil-design-eng",
+      "entities": [],
+      "domains": [
+        "frontend",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 679,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "engram-rehydrate",
+      "entities": [
+        "anthropic",
+        "claude",
+        "git"
+      ],
+      "domains": [
+        "agents",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 238,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-multi-agent-coordination"
+        }
+      ]
+    },
+    {
+      "name": "engram-to-obsidian",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "the user asks to 'sync engram to obsidian', 'generate engram digest', 'refresh engram notes', or any phrasing that exports persistent memory into the vault for browsing/search"
+      ],
+      "lines": 54,
+      "relationships": []
+    },
+    {
+      "name": "eval-skeleton",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "llm"
+      ],
+      "triggers": [
+        "⟦ user_name ⟧ says /eval-skeleton <agent>, generate eval skeleton for <agent>, prepárame un scenario"
+      ],
+      "lines": 120,
+      "relationships": []
+    },
+    {
+      "name": "find-skills",
+      "entities": [
+        "claude",
+        "docker",
+        "express",
+        "git",
+        "github",
+        "kubernetes",
+        "nextjs"
+      ],
+      "domains": [
+        "frontend",
+        "agents"
+      ],
+      "triggers": [
+        "the user:"
+      ],
+      "lines": 142,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "related_to",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "framework-selection",
+      "entities": [
+        "langchain",
+        "langgraph",
+        "rag"
+      ],
+      "domains": [
+        "agents",
+        "ml-core"
+      ],
+      "triggers": [
+        "the task is focused and self-contained",
+        "you need to own the control flow",
+        "the task is open-ended and multi-dimensional"
+      ],
+      "lines": 163,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "extends",
+          "target": "langgraph-human-in-the-loop"
+        }
+      ]
+    },
+    {
+      "name": "full-bug-hunt",
+      "entities": [
+        "bandit",
+        "docker",
+        "mypy",
+        "ruff"
+      ],
+      "domains": [
+        "infra",
+        "nlp"
+      ],
+      "triggers": [
+        "auditing any codebase before deploy"
+      ],
+      "lines": 85,
+      "relationships": [
+        {
+          "type": "alternative_to",
+          "target": "observability-multi-agent-coordination"
+        }
+      ]
+    },
+    {
+      "name": "gentleman-ai",
+      "entities": [
+        "aws",
+        "black",
+        "docker",
+        "git",
+        "helm",
+        "kubernetes",
+        "mlflow",
+        "mypy",
+        "pandas",
+        "pytest",
+        "qdrant",
+        "rag",
+        "redis",
+        "ruff",
+        "sklearn",
+        "terraform",
+        "vllm"
+      ],
+      "domains": [
+        "infra",
+        "rag"
+      ],
+      "triggers": [
+        "reviewing Python, JavaScript, ML models, Docker, or any code"
+      ],
+      "lines": 265,
+      "relationships": []
+    },
+    {
+      "name": "git",
+      "entities": [
+        "git",
+        "github"
+      ],
+      "domains": [
+        "nlp",
+        "agents"
+      ],
+      "triggers": [
+        "managing code versions, collaborating on projects, or setting up Git workflows",
+        "|"
+      ],
+      "lines": 739,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "transilience-api-security"
+        },
+        {
+          "type": "alternative_to",
+          "target": "ml-code-store-promote"
+        }
+      ]
+    },
+    {
+      "name": "grill-with-docs",
+      "entities": [],
+      "domains": [
+        "frontend",
+        "llm"
+      ],
+      "triggers": [
+        "user wants to stress-test a plan against their project's language and documented decisions"
+      ],
+      "lines": 88,
+      "relationships": []
+    },
+    {
+      "name": "htb-methodology",
+      "entities": [
+        "docker",
+        "git",
+        "kubernetes"
+      ],
+      "domains": [
+        "agents",
+        "infra"
+      ],
+      "triggers": [],
+      "lines": 146,
+      "relationships": []
+    },
+    {
+      "name": "htb-new",
+      "entities": [
+        "anthropic",
+        "claude",
+        "git"
+      ],
+      "domains": [
+        "ml-core",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 74,
+      "relationships": []
+    },
+    {
+      "name": "inference-optimization",
+      "entities": [
+        "docker",
+        "fastapi",
+        "huggingface",
+        "lambda",
+        "numpy",
+        "onnx",
+        "openai",
+        "pytorch",
+        "qlora",
+        "quantization",
+        "tensorrt",
+        "tgi",
+        "transformers",
+        "triton",
+        "vllm"
+      ],
+      "domains": [
+        "deep-learning",
+        "llm"
+      ],
+      "triggers": [
+        "optimizing inference latency, reducing model size, or deploying to GPU"
+      ],
+      "lines": 1153,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "diagnose"
+        }
+      ]
+    },
+    {
+      "name": "justify",
+      "entities": [
+        "claude",
+        "github"
+      ],
+      "domains": [
+        "agents",
+        "llm"
+      ],
+      "triggers": [],
+      "lines": 78,
+      "relationships": []
+    },
+    {
+      "name": "karpathy-guidelines",
+      "entities": [
+        "claude",
+        "github"
+      ],
+      "domains": [
+        "ml-core",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 196,
+      "relationships": []
+    },
+    {
+      "name": "kubernetes",
+      "entities": [
+        "docker",
+        "helm",
+        "kubernetes",
+        "pytorch",
+        "wandb"
+      ],
+      "domains": [
+        "infra",
+        "deep-learning"
+      ],
+      "triggers": [
+        "deploying containerized applications, managing clusters, or orchestrating ML infrastructure"
+      ],
+      "lines": 1037,
+      "relationships": []
+    },
+    {
+      "name": "langchain",
+      "entities": [
+        "anthropic",
+        "claude",
+        "faiss",
+        "fastapi",
+        "github",
+        "langchain",
+        "langgraph",
+        "langsmith",
+        "openai",
+        "rag"
+      ],
+      "domains": [
+        "agents",
+        "rag"
+      ],
+      "triggers": [],
+      "lines": 726,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langchain-fundamentals"
+        },
+        {
+          "type": "related_to",
+          "target": "langchain-fundamentals"
+        }
+      ]
+    },
+    {
+      "name": "langchain-dependencies",
+      "entities": [
+        "anthropic",
+        "aws",
+        "bedrock",
+        "claude",
+        "faiss",
+        "huggingface",
+        "langchain",
+        "langgraph",
+        "langsmith",
+        "openai",
+        "pinecone",
+        "pytest",
+        "qdrant",
+        "weaviate"
+      ],
+      "domains": [
+        "agents",
+        "rag"
+      ],
+      "triggers": [
+        "setting up a new project or when asked about package versions, installation, or dependency management for LangChain, LangGraph, LangSmith, or Deep Agents",
+        "| Min version |",
+        "| Min version |"
+      ],
+      "lines": 419,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langgraph"
+        },
+        {
+          "type": "depends_on",
+          "target": "langsmith"
+        },
+        {
+          "type": "alternative_to",
+          "target": "deep-agents-orchestration"
+        },
+        {
+          "type": "alternative_to",
+          "target": "langgraph-human-in-the-loop"
+        }
+      ]
+    },
+    {
+      "name": "langchain-fundamentals",
+      "entities": [
+        "anthropic",
+        "claude",
+        "langchain",
+        "langgraph",
+        "openai"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "building from scratch or learning core concepts",
+        "you need recent data or facts",
+        "you need recent data or facts"
+      ],
+      "lines": 394,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langchain"
+        }
+      ]
+    },
+    {
+      "name": "langchain-middleware",
+      "entities": [
+        "anthropic",
+        "claude",
+        "langchain",
+        "langgraph"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "you need human-in-the-loop approval, custom middleware, or structured output"
+      ],
+      "lines": 306,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "langchain-rag",
+      "entities": [
+        "anthropic",
+        "claude",
+        "faiss",
+        "langchain",
+        "openai",
+        "pinecone",
+        "rag"
+      ],
+      "domains": [
+        "rag",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 521,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "rag-systems"
+        },
+        {
+          "type": "related_to",
+          "target": "rag-systems"
+        }
+      ]
+    },
+    {
+      "name": "langgraph",
+      "entities": [
+        "anthropic",
+        "claude",
+        "fastapi",
+        "lambda",
+        "langchain",
+        "langgraph",
+        "langsmith",
+        "openai",
+        "rag"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 679,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langgraph-fundamentals"
+        },
+        {
+          "type": "related_to",
+          "target": "langgraph-fundamentals"
+        },
+        {
+          "type": "alternative_to",
+          "target": "langgraph"
+        },
+        {
+          "type": "alternative_to",
+          "target": "langgraph"
+        },
+        {
+          "type": "alternative_to",
+          "target": "langgraph"
+        }
+      ]
+    },
+    {
+      "name": "langgraph-fundamentals",
+      "entities": [
+        "lambda",
+        "langchain",
+        "langgraph"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "writing LangGraph code from scratch"
+      ],
+      "lines": 811,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        },
+        {
+          "type": "depends_on",
+          "target": "langgraph"
+        },
+        {
+          "type": "related_to",
+          "target": "langgraph"
+        }
+      ]
+    },
+    {
+      "name": "langgraph-human-in-the-loop",
+      "entities": [
+        "langchain",
+        "langgraph"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "implementing human-in-the-loop patterns, pausing for approval, or handling errors in LangGraph"
+      ],
+      "lines": 532,
+      "relationships": []
+    },
+    {
+      "name": "langgraph-persistence",
+      "entities": [
+        "anthropic",
+        "claude",
+        "langchain",
+        "langgraph"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "your LangGraph needs to persist state, remember conversations, travel through history, or configure subgraph checkpointer scoping"
+      ],
+      "lines": 564,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "langsmith",
+      "entities": [
+        "claude",
+        "github",
+        "langchain",
+        "langgraph",
+        "langsmith",
+        "rag"
+      ],
+      "domains": [
+        "ml-core",
+        "mlops"
+      ],
+      "triggers": [
+        "the user mentions traces, runs, datasets, evaluators, experiments, LangSmith projects, or LLM observability"
+      ],
+      "lines": 748,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "live-transcribe",
+      "entities": [
+        "claude",
+        "numpy"
+      ],
+      "domains": [
+        "llm",
+        "ml-core"
+      ],
+      "triggers": [
+        "the user asks to \"transcribir reunión\", \"live transcribe\", \"qué dijo en la reu\", \"graba esta reu\", \"archiva la reu\", or invokes /lt-start, /lt-stop, /lt-archive, /ask-live"
+      ],
+      "lines": 85,
+      "relationships": []
+    },
+    {
+      "name": "llm-engineering",
+      "entities": [
+        "anthropic",
+        "claude",
+        "docker",
+        "dpo",
+        "huggingface",
+        "langsmith",
+        "lora",
+        "mlflow",
+        "openai",
+        "peft",
+        "qlora",
+        "quantization",
+        "rag",
+        "rlhf",
+        "tensorrt",
+        "transformers",
+        "vllm"
+      ],
+      "domains": [
+        "llm",
+        "ml-core"
+      ],
+      "triggers": [
+        "working with LLM customization, adaptation, safety, or deployment tasks",
+        "|"
+      ],
+      "lines": 381,
+      "relationships": [
+        {
+          "type": "alternative_to",
+          "target": "observability-prompt-versioning"
+        }
+      ]
+    },
+    {
+      "name": "math-critic",
+      "entities": [
+        "distillation",
+        "lora",
+        "numpy",
+        "qlora",
+        "rag",
+        "sklearn"
+      ],
+      "domains": [
+        "llm",
+        "ml-core"
+      ],
+      "triggers": [
+        "auditing @ml-engineer, @dl-engineer, or @ai-engineer output before @code-critic"
+      ],
+      "lines": 296,
+      "relationships": [
+        {
+          "type": "alternative_to",
+          "target": "git"
+        }
+      ]
+    },
+    {
+      "name": "mcp-development",
+      "entities": [
+        "anthropic",
+        "claude",
+        "git",
+        "github",
+        "langchain",
+        "pytest"
+      ],
+      "domains": [
+        "frontend",
+        "llm"
+      ],
+      "triggers": [
+        "building custom MCP servers, integrating"
+      ],
+      "lines": 1002,
+      "relationships": []
+    },
+    {
+      "name": "meme-coin-audit",
+      "entities": [],
+      "domains": [
+        "rag",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 295,
+      "relationships": []
+    },
+    {
+      "name": "ml-code-store-promote",
+      "entities": [
+        "git"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 56,
+      "relationships": []
+    },
+    {
+      "name": "ml-fundamentals",
+      "entities": [
+        "dvc",
+        "git",
+        "mlflow",
+        "numpy",
+        "pytest",
+        "pytorch",
+        "scikit-learn",
+        "sklearn",
+        "tensorflow",
+        "transformers"
+      ],
+      "domains": [
+        "ml-core",
+        "deep-learning"
+      ],
+      "triggers": [
+        "building ML projects, structuring code, or implementing training pipelines"
+      ],
+      "lines": 631,
+      "relationships": []
+    },
+    {
+      "name": "ml-new",
+      "entities": [
+        "aws",
+        "bedrock",
+        "dvc",
+        "git",
+        "helm",
+        "mlflow",
+        "rag",
+        "sagemaker",
+        "shap"
+      ],
+      "domains": [
+        "mlops",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 178,
+      "relationships": []
+    },
+    {
+      "name": "ml-security",
+      "entities": [
+        "claude",
+        "fastapi",
+        "huggingface",
+        "numpy",
+        "openai",
+        "pytorch",
+        "sklearn",
+        "tensorflow"
+      ],
+      "domains": [
+        "ml-core",
+        "llm"
+      ],
+      "triggers": [
+        "hardening ML systems, performing security audits, or defending against adversarial threats"
+      ],
+      "lines": 755,
+      "relationships": []
+    },
+    {
+      "name": "mlops",
+      "entities": [
+        "dvc",
+        "feast",
+        "git",
+        "github",
+        "kubernetes",
+        "lambda",
+        "langsmith",
+        "mlflow",
+        "numpy",
+        "pytorch",
+        "s3",
+        "sagemaker",
+        "sklearn",
+        "triton",
+        "wandb"
+      ],
+      "domains": [
+        "mlops",
+        "ml-core"
+      ],
+      "triggers": [
+        "operationalizing ML models, setting up ML infrastructure, or debugging production ML issues"
+      ],
+      "lines": 903,
+      "relationships": []
+    },
+    {
+      "name": "model-interpretability",
+      "entities": [
+        "fastapi",
+        "lambda",
+        "langsmith",
+        "lime",
+        "numpy",
+        "pytorch",
+        "shap",
+        "sklearn",
+        "transformers",
+        "xgboost"
+      ],
+      "domains": [
+        "deep-learning",
+        "ml-core"
+      ],
+      "triggers": [
+        "explaining model predictions, debugging models, or meeting regulatory requirements"
+      ],
+      "lines": 657,
+      "relationships": []
+    },
+    {
+      "name": "multimodal-ai",
+      "entities": [
+        "anthropic",
+        "claude",
+        "faiss",
+        "lambda",
+        "numpy",
+        "openai",
+        "rag",
+        "transformers"
+      ],
+      "domains": [
+        "ml-core",
+        "cv"
+      ],
+      "triggers": [
+        "building systems that combine images, text, audio, or video"
+      ],
+      "lines": 674,
+      "relationships": []
+    },
+    {
+      "name": "next-task",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "ml-core",
+        "agents"
+      ],
+      "triggers": [
+        "⟦ user_name ⟧ says /next-task, what should I work on next, what is the highest-RICE pending item, or similar planning-prioritization queries within an ARCA project"
+      ],
+      "lines": 120,
+      "relationships": []
+    },
+    {
+      "name": "nlp-engineering",
+      "entities": [
+        "anthropic",
+        "claude",
+        "faiss",
+        "huggingface",
+        "numpy",
+        "openai",
+        "sklearn",
+        "transformers"
+      ],
+      "domains": [
+        "ml-core",
+        "nlp"
+      ],
+      "triggers": [
+        "building text classification, entity extraction, sentiment analysis, or text processing systems"
+      ],
+      "lines": 605,
+      "relationships": []
+    },
+    {
+      "name": "observability-decision-tracing",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 404,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "observability-error-retry-tracking",
+      "entities": [
+        "anthropic",
+        "claude",
+        "langchain"
+      ],
+      "domains": [
+        "nlp",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 268,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "observability-guardrails-safety",
+      "entities": [],
+      "domains": [
+        "llm",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 438,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "observability-llm-call-tracing",
+      "entities": [
+        "anthropic",
+        "claude",
+        "langchain",
+        "openai"
+      ],
+      "domains": [
+        "llm",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 155,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "observability-multi-agent-coordination",
+      "entities": [
+        "autogen",
+        "crewai",
+        "langgraph"
+      ],
+      "domains": [
+        "agents",
+        "data"
+      ],
+      "triggers": [],
+      "lines": 209,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "observability-prompt-versioning",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 366,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "observability-token-cost-tracking",
+      "entities": [
+        "anthropic",
+        "claude",
+        "langsmith",
+        "openai"
+      ],
+      "domains": [
+        "frontend",
+        "llm"
+      ],
+      "triggers": [],
+      "lines": 210,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "observability-tool-call-tracking",
+      "entities": [
+        "crewai",
+        "langchain"
+      ],
+      "domains": [
+        "agents",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 190,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "obsidian-cli",
+      "entities": [],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "the user asks to interact with their Obsidian vault, manage notes, search vault content, perform vault operations from the command line, or develop and debug Obsidian plugins and themes"
+      ],
+      "lines": 107,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "obsidian-cycle-close"
+        }
+      ]
+    },
+    {
+      "name": "obsidian-cycle-close",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "the user signals \"cerrar ciclo C<N>\", \"ciclo cerrado\", \"/cycle-close <N>\", or any phrasing that ends a pipeline cycle and ARCA needs to persist the artifacts CLAUDE"
+      ],
+      "lines": 131,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "obsidian-markdown",
+      "entities": [],
+      "domains": [
+        "agents",
+        "cv"
+      ],
+      "triggers": [
+        "working with"
+      ],
+      "lines": 197,
+      "relationships": []
+    },
+    {
+      "name": "obsidian-status",
+      "entities": [
+        "claude",
+        "git"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "the user wants to checkpoint progress mid-session, force a status snapshot before compaction, or fix a Status"
+      ],
+      "lines": 51,
+      "relationships": []
+    },
+    {
+      "name": "owasp-security",
+      "entities": [
+        "express",
+        "rag"
+      ],
+      "domains": [
+        "security",
+        "agents"
+      ],
+      "triggers": [
+        "reviewing code for security vulnerabilities, implementing authentication/authorization, handling user input, or discussing web application security"
+      ],
+      "lines": 545,
+      "relationships": []
+    },
+    {
+      "name": "pentest-ad-attacker",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 433,
+      "relationships": []
+    },
+    {
+      "name": "pentest-c2-operator",
+      "entities": [
+        "aws",
+        "black",
+        "docker"
+      ],
+      "domains": [
+        "agents",
+        "cv"
+      ],
+      "triggers": [],
+      "lines": 365,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-multi-agent-coordination"
+        },
+        {
+          "type": "depends_on",
+          "target": "transilience-ai-threat-testing"
+        }
+      ]
+    },
+    {
+      "name": "pentest-cicd-redteam",
+      "entities": [
+        "github",
+        "gitlab",
+        "terraform"
+      ],
+      "domains": [
+        "infra",
+        "security"
+      ],
+      "triggers": [],
+      "lines": 529,
+      "relationships": []
+    },
+    {
+      "name": "pentest-container-breakout",
+      "entities": [
+        "aws",
+        "docker",
+        "kubernetes"
+      ],
+      "domains": [
+        "infra",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 422,
+      "relationships": []
+    },
+    {
+      "name": "pentest-detection-engineer",
+      "entities": [
+        "aws",
+        "black"
+      ],
+      "domains": [
+        "agents",
+        "mlops"
+      ],
+      "triggers": [],
+      "lines": 101,
+      "relationships": []
+    },
+    {
+      "name": "pentest-forensics-analyst",
+      "entities": [
+        "aws",
+        "docker",
+        "kubernetes",
+        "lambda",
+        "lime",
+        "s3"
+      ],
+      "domains": [
+        "agents",
+        "infra"
+      ],
+      "triggers": [],
+      "lines": 520,
+      "relationships": []
+    },
+    {
+      "name": "pentest-llm-redteam",
+      "entities": [
+        "claude",
+        "distillation",
+        "github",
+        "rag",
+        "transformers"
+      ],
+      "domains": [
+        "ml-core",
+        "rag"
+      ],
+      "triggers": [],
+      "lines": 422,
+      "relationships": [
+        {
+          "type": "alternative_to",
+          "target": "langgraph-human-in-the-loop"
+        }
+      ]
+    },
+    {
+      "name": "persist",
+      "entities": [
+        "git",
+        "mypy",
+        "pytest",
+        "ruff"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 99,
+      "relationships": []
+    },
+    {
+      "name": "pocock-caveman",
+      "entities": [],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "user says \"caveman mode\", \"talk like caveman\", \"use caveman\","
+      ],
+      "lines": 49,
+      "relationships": []
+    },
+    {
+      "name": "pocock-handoff",
+      "entities": [],
+      "domains": [
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 15,
+      "relationships": []
+    },
+    {
+      "name": "pocock-prototype",
+      "entities": [],
+      "domains": [
+        "nlp",
+        "agents"
+      ],
+      "triggers": [
+        "the user wants to prototype, sanity-check a data model or state machine, mock up a UI, explore design options, or says \"prototype this\", \"let me play with it\", \"try a few designs\""
+      ],
+      "lines": 30,
+      "relationships": []
+    },
+    {
+      "name": "pocock-tdd",
+      "entities": [],
+      "domains": [
+        "frontend",
+        "ml-core"
+      ],
+      "triggers": [
+        "user wants to build features or fix bugs using TDD, mentions \"red-green-refactor\", wants integration tests, or asks for test-first development"
+      ],
+      "lines": 109,
+      "relationships": []
+    },
+    {
+      "name": "pocock-zoom-out",
+      "entities": [],
+      "domains": [
+        "agents",
+        "ml-core"
+      ],
+      "triggers": [
+        "you're unfamiliar with a section of code or need to understand how it fits into the bigger picture"
+      ],
+      "lines": 7,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "production",
+      "entities": [
+        "docker",
+        "fastapi",
+        "git",
+        "github",
+        "kubernetes",
+        "numpy",
+        "onnx",
+        "pytest",
+        "pytorch",
+        "quantization",
+        "tensorrt"
+      ],
+      "domains": [
+        "deep-learning",
+        "infra"
+      ],
+      "triggers": [
+        "deploying models to production, containerizing ML services, optimizing inference, or building production-grade APIs"
+      ],
+      "lines": 1063,
+      "relationships": []
+    },
+    {
+      "name": "prompt-master",
+      "entities": [
+        "claude",
+        "github",
+        "openai"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "needed: \"Read all files in /src/auth/ before starting\""
+      ],
+      "lines": 448,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "transilience-ai-threat-testing"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-multi-agent-coordination"
+        },
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        },
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        },
+        {
+          "type": "related_to",
+          "target": "speckit-taskstoissues"
+        },
+        {
+          "type": "related_to",
+          "target": "observability-tool-call-tracking"
+        },
+        {
+          "type": "alternative_to",
+          "target": "ml-code-store-promote"
+        },
+        {
+          "type": "alternative_to",
+          "target": "speckit-analyze"
+        }
+      ]
+    },
+    {
+      "name": "python-init",
+      "entities": [
+        "mypy",
+        "pytest",
+        "ruff"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [
+        "creating a new"
+      ],
+      "lines": 83,
+      "relationships": []
+    },
+    {
+      "name": "rag-new",
+      "entities": [
+        "langchain",
+        "rag"
+      ],
+      "domains": [
+        "rag",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 52,
+      "relationships": []
+    },
+    {
+      "name": "rag-systems",
+      "entities": [
+        "chromadb",
+        "claude",
+        "faiss",
+        "lambda",
+        "langchain",
+        "langsmith",
+        "llamaindex",
+        "numpy",
+        "openai",
+        "pgvector",
+        "pinecone",
+        "qdrant",
+        "rag",
+        "sklearn",
+        "weaviate"
+      ],
+      "domains": [
+        "rag",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 763,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langchain-rag"
+        },
+        {
+          "type": "alternative_to",
+          "target": "langchain-rag"
+        }
+      ]
+    },
+    {
+      "name": "redteam-new",
+      "entities": [
+        "black",
+        "claude",
+        "rag"
+      ],
+      "domains": [
+        "security",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 107,
+      "relationships": []
+    },
+    {
+      "name": "redteam-resume",
+      "entities": [],
+      "domains": [
+        "ml-core",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 63,
+      "relationships": []
+    },
+    {
+      "name": "reinforcement-learning",
+      "entities": [
+        "dpo",
+        "lambda",
+        "numpy",
+        "rlhf",
+        "transformers"
+      ],
+      "domains": [
+        "llm",
+        "deep-learning"
+      ],
+      "triggers": [
+        "building game AI, robotics controllers, recommendation optimization, or fine-tuning LLMs with human feedback"
+      ],
+      "lines": 748,
+      "relationships": []
+    },
+    {
+      "name": "report-writing",
+      "entities": [
+        "aws"
+      ],
+      "domains": [
+        "rag",
+        "cv"
+      ],
+      "triggers": [],
+      "lines": 485,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-multi-agent-coordination"
+        }
+      ]
+    },
+    {
+      "name": "requirements-engineering",
+      "entities": [
+        "dvc",
+        "mlflow",
+        "pytest",
+        "redis",
+        "shap",
+        "xgboost"
+      ],
+      "domains": [
+        "ml-core",
+        "mlops"
+      ],
+      "triggers": [
+        "starting C1 Discovery, writing"
+      ],
+      "lines": 823,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "requirements-engineering"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "research-synth",
+      "entities": [
+        "huggingface"
+      ],
+      "domains": [
+        "agents",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 169,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "related_to",
+          "target": "framework-selection"
+        }
+      ]
+    },
+    {
+      "name": "review-pr",
+      "entities": [
+        "claude",
+        "git",
+        "github"
+      ],
+      "domains": [
+        "agents",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 71,
+      "relationships": []
+    },
+    {
+      "name": "security-arsenal",
+      "entities": [
+        "aws",
+        "django",
+        "docker",
+        "elasticsearch",
+        "flask",
+        "git",
+        "github",
+        "kubernetes",
+        "redis",
+        "s3"
+      ],
+      "domains": [
+        "frontend",
+        "agents"
+      ],
+      "triggers": [
+        "you need specific payloads for XSS/SSRF/SQLi/XXE/NoSQLi/command injection/SSTI/IDOR/path-traversal/HTTP smuggling/WebSocket/MFA bypass, bypass techniques, or to check if a finding is submittable",
+        "asked about what NOT to submit"
+      ],
+      "lines": 841,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langchain-dependencies"
+        }
+      ]
+    },
+    {
+      "name": "skill-effectiveness",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "llm"
+      ],
+      "triggers": [],
+      "lines": 180,
+      "relationships": []
+    },
+    {
+      "name": "skill-router",
+      "entities": [
+        "claude",
+        "docker",
+        "fastapi",
+        "langchain",
+        "langgraph",
+        "langsmith",
+        "rag",
+        "redis",
+        "sklearn"
+      ],
+      "domains": [
+        "ml-core",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 274,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "alternative_to",
+          "target": "langgraph-human-in-the-loop"
+        }
+      ]
+    },
+    {
+      "name": "spec-new",
+      "entities": [
+        "claude",
+        "github",
+        "rag"
+      ],
+      "domains": [
+        "ml-core",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 117,
+      "relationships": []
+    },
+    {
+      "name": "speckit-analyze",
+      "entities": [
+        "git",
+        "github"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 260,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "next-task"
+        }
+      ]
+    },
+    {
+      "name": "speckit-checklist",
+      "entities": [
+        "git",
+        "github"
+      ],
+      "domains": [
+        "ml-core",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 372,
+      "relationships": []
+    },
+    {
+      "name": "speckit-clarify",
+      "entities": [
+        "git",
+        "github"
+      ],
+      "domains": [
+        "llm",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 284,
+      "relationships": []
+    },
+    {
+      "name": "speckit-constitution",
+      "entities": [
+        "claude",
+        "git",
+        "github"
+      ],
+      "domains": [
+        "agents",
+        "llm"
+      ],
+      "triggers": [],
+      "lines": 157,
+      "relationships": []
+    },
+    {
+      "name": "speckit-implement",
+      "entities": [
+        "docker",
+        "git",
+        "github",
+        "helm",
+        "kubernetes",
+        "terraform"
+      ],
+      "domains": [
+        "infra",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 224,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "speckit-plan",
+      "entities": [
+        "claude",
+        "git",
+        "github"
+      ],
+      "domains": [
+        "agents",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 164,
+      "relationships": []
+    },
+    {
+      "name": "speckit-specify",
+      "entities": [
+        "git",
+        "github",
+        "redis"
+      ],
+      "domains": [
+        "frontend",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 342,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "ecc-agent-introspection"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "pocock-handoff"
+        }
+      ]
+    },
+    {
+      "name": "speckit-tasks",
+      "entities": [
+        "git",
+        "github"
+      ],
+      "domains": [
+        "llm",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 214,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-multi-agent-coordination"
+        }
+      ]
+    },
+    {
+      "name": "speckit-taskstoissues",
+      "entities": [
+        "git",
+        "github"
+      ],
+      "domains": [
+        "ml-core",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 106,
+      "relationships": []
+    },
+    {
+      "name": "suggest",
+      "entities": [
+        "docker",
+        "git",
+        "terraform"
+      ],
+      "domains": [
+        "ml-core",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 75,
+      "relationships": []
+    },
+    {
+      "name": "team-debug",
+      "entities": [
+        "git"
+      ],
+      "domains": [
+        "agents",
+        "mlops"
+      ],
+      "triggers": [],
+      "lines": 79,
+      "relationships": []
+    },
+    {
+      "name": "team-ml-review",
+      "entities": [
+        "git",
+        "mlflow"
+      ],
+      "domains": [
+        "mlops",
+        "ml-core"
+      ],
+      "triggers": [],
+      "lines": 96,
+      "relationships": []
+    },
+    {
+      "name": "team-refactor",
+      "entities": [
+        "git"
+      ],
+      "domains": [
+        "agents",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 92,
+      "relationships": []
+    },
+    {
+      "name": "team-security",
+      "entities": [
+        "git"
+      ],
+      "domains": [
+        "security",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 85,
+      "relationships": [
+        {
+          "type": "alternative_to",
+          "target": "langchain-fundamentals"
+        }
+      ]
+    },
+    {
+      "name": "testing",
+      "entities": [
+        "fastapi",
+        "github",
+        "numpy",
+        "pandas",
+        "pytest",
+        "sklearn"
+      ],
+      "domains": [
+        "ml-core",
+        "deep-learning"
+      ],
+      "triggers": [
+        "writing unit tests, integration tests, or setting up test infrastructure"
+      ],
+      "lines": 958,
+      "relationships": []
+    },
+    {
+      "name": "to-prd",
+      "entities": [],
+      "domains": [
+        "frontend",
+        "ml-core"
+      ],
+      "triggers": [
+        "user wants to create a PRD from the current context"
+      ],
+      "lines": 74,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "token-optimizer",
+      "entities": [
+        "anthropic",
+        "chromadb",
+        "claude",
+        "fastapi",
+        "langgraph",
+        "langsmith",
+        "openai",
+        "pruning",
+        "rag",
+        "transformers",
+        "weaviate"
+      ],
+      "domains": [
+        "ml-core",
+        "rag"
+      ],
+      "triggers": [],
+      "lines": 534,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "observability-decision-tracing"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "depends_on",
+          "target": "observability-token-cost-tracking"
+        }
+      ]
+    },
+    {
+      "name": "transilience-ai-threat-testing",
+      "entities": [
+        "rag"
+      ],
+      "domains": [
+        "rag",
+        "security"
+      ],
+      "triggers": [],
+      "lines": 99,
+      "relationships": []
+    },
+    {
+      "name": "transilience-api-security",
+      "entities": [],
+      "domains": [
+        "llm",
+        "security"
+      ],
+      "triggers": [],
+      "lines": 33,
+      "relationships": []
+    },
+    {
+      "name": "transilience-cloud-containers",
+      "entities": [
+        "aws",
+        "docker",
+        "kubernetes",
+        "lambda",
+        "s3"
+      ],
+      "domains": [
+        "infra",
+        "rag"
+      ],
+      "triggers": [],
+      "lines": 30,
+      "relationships": []
+    },
+    {
+      "name": "transilience-cve-poc-generator",
+      "entities": [
+        "github"
+      ],
+      "domains": [
+        "nlp",
+        "cv"
+      ],
+      "triggers": [],
+      "lines": 56,
+      "relationships": []
+    },
+    {
+      "name": "transilience-cve-risk-score",
+      "entities": [],
+      "domains": [
+        "nlp",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 53,
+      "relationships": []
+    },
+    {
+      "name": "transilience-hackerone",
+      "entities": [],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 121,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        }
+      ]
+    },
+    {
+      "name": "transilience-hackthebox",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "nlp"
+      ],
+      "triggers": [],
+      "lines": 28,
+      "relationships": []
+    },
+    {
+      "name": "transilience-injection",
+      "entities": [],
+      "domains": [
+        "nlp",
+        "security"
+      ],
+      "triggers": [],
+      "lines": 37,
+      "relationships": []
+    },
+    {
+      "name": "transilience-reconnaissance",
+      "entities": [
+        "git",
+        "github",
+        "gitlab"
+      ],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 59,
+      "relationships": [
+        {
+          "type": "related_to",
+          "target": "find-skills"
+        }
+      ]
+    },
+    {
+      "name": "triage-validation",
+      "entities": [
+        "github",
+        "s3"
+      ],
+      "domains": [
+        "security",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 256,
+      "relationships": []
+    },
+    {
+      "name": "verbalized-sampling",
+      "entities": [
+        "rlhf"
+      ],
+      "domains": [
+        "ml-core",
+        "llm"
+      ],
+      "triggers": [
+        "the task is one of:"
+      ],
+      "lines": 138,
+      "relationships": [
+        {
+          "type": "alternative_to",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "alternative_to",
+          "target": "owasp-security"
+        },
+        {
+          "type": "alternative_to",
+          "target": "transilience-hackerone"
+        },
+        {
+          "type": "alternative_to",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "alternative_to",
+          "target": "observability-token-cost-tracking"
+        },
+        {
+          "type": "alternative_to",
+          "target": "speckit-taskstoissues"
+        },
+        {
+          "type": "alternative_to",
+          "target": "pentest-forensics-analyst"
+        }
+      ]
+    },
+    {
+      "name": "voting-review",
+      "entities": [
+        "git"
+      ],
+      "domains": [
+        "security",
+        "agents"
+      ],
+      "triggers": [],
+      "lines": 118,
+      "relationships": []
+    },
+    {
+      "name": "web2-recon",
+      "entities": [
+        "django",
+        "elasticsearch",
+        "express",
+        "flask",
+        "git",
+        "github",
+        "redis"
+      ],
+      "domains": [
+        "ml-core",
+        "frontend"
+      ],
+      "triggers": [
+        "starting recon on any web2 target or when asked about asset discovery, subdomain enum, or attack surface mapping"
+      ],
+      "lines": 427,
+      "relationships": []
+    },
+    {
+      "name": "web2-vuln-classes",
+      "entities": [
+        "aws",
+        "docker",
+        "elasticsearch",
+        "flask",
+        "github",
+        "gitlab",
+        "lambda",
+        "rag",
+        "redis",
+        "s3"
+      ],
+      "domains": [
+        "agents",
+        "cv"
+      ],
+      "triggers": [
+        "hunting a specific vuln class or studying what makes bugs pay"
+      ],
+      "lines": 835,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "transilience-hackerone"
+        },
+        {
+          "type": "depends_on",
+          "target": "pentest-ad-attacker"
+        }
+      ]
+    },
+    {
+      "name": "web3-audit",
+      "entities": [],
+      "domains": [
+        "agents",
+        "frontend"
+      ],
+      "triggers": [],
+      "lines": 553,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "obsidian-cycle-close"
+        },
+        {
+          "type": "alternative_to",
+          "target": "requirements-engineering"
+        }
+      ]
+    },
+    {
+      "name": "wiki-ingest",
+      "entities": [
+        "claude"
+      ],
+      "domains": [
+        "agents",
+        "cv"
+      ],
+      "triggers": [
+        "⟦ user_name ⟧ says /wiki-ingest <url-or-path>, ingest this paper, add this talk to the wiki, save this PDF to my notes, or similar"
+      ],
+      "lines": 131,
+      "relationships": [
+        {
+          "type": "depends_on",
+          "target": "langgraph-human-in-the-loop"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent-browser-cli",
+      "target": "langgraph-human-in-the-loop",
+      "type": "depends_on"
+    },
+    {
+      "source": "agile-ml",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "research-synth",
+      "type": "depends_on"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "grill-with-docs",
+      "type": "extends"
+    },
+    {
+      "source": "aidesigner-frontend",
+      "target": "transilience-api-security",
+      "type": "alternative_to"
+    },
+    {
+      "source": "arca-vault-sync",
+      "target": "observability-prompt-versioning",
+      "type": "depends_on"
+    },
+    {
+      "source": "auto-tune-review",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "bb-methodology",
+      "target": "transilience-hackerone",
+      "type": "depends_on"
+    },
+    {
+      "source": "bb-methodology",
+      "target": "mcp-development",
+      "type": "alternative_to"
+    },
+    {
+      "source": "bb-methodology",
+      "target": "observability-prompt-versioning",
+      "type": "alternative_to"
+    },
+    {
+      "source": "bb-methodology",
+      "target": "ml-code-store-promote",
+      "type": "alternative_to"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "transilience-cve-poc-generator",
+      "type": "depends_on"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "transilience-hackerone",
+      "type": "depends_on"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "redteam-new",
+      "type": "alternative_to"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "web2-vuln-classes",
+      "type": "alternative_to"
+    },
+    {
+      "source": "cicd",
+      "target": "obsidian-status",
+      "type": "depends_on"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "pentest-forensics-analyst",
+      "type": "depends_on"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "ml-code-store-promote",
+      "type": "depends_on"
+    },
+    {
+      "source": "deep-agents-orchestration",
+      "target": "langgraph-human-in-the-loop",
+      "type": "depends_on"
+    },
+    {
+      "source": "diagnose",
+      "target": "python-init",
+      "type": "related_to"
+    },
+    {
+      "source": "emil-design-eng",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "engram-rehydrate",
+      "target": "observability-multi-agent-coordination",
+      "type": "depends_on"
+    },
+    {
+      "source": "find-skills",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "find-skills",
+      "target": "observability-token-cost-tracking",
+      "type": "related_to"
+    },
+    {
+      "source": "framework-selection",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "framework-selection",
+      "target": "langgraph-human-in-the-loop",
+      "type": "extends"
+    },
+    {
+      "source": "full-bug-hunt",
+      "target": "observability-multi-agent-coordination",
+      "type": "alternative_to"
+    },
+    {
+      "source": "git",
+      "target": "transilience-api-security",
+      "type": "depends_on"
+    },
+    {
+      "source": "git",
+      "target": "ml-code-store-promote",
+      "type": "alternative_to"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "diagnose",
+      "type": "depends_on"
+    },
+    {
+      "source": "langchain",
+      "target": "langchain-fundamentals",
+      "type": "depends_on"
+    },
+    {
+      "source": "langchain",
+      "target": "langchain-fundamentals",
+      "type": "related_to"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langgraph",
+      "type": "depends_on"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langsmith",
+      "type": "depends_on"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "deep-agents-orchestration",
+      "type": "alternative_to"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langgraph-human-in-the-loop",
+      "type": "alternative_to"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "langchain",
+      "type": "depends_on"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "langgraph-human-in-the-loop",
+      "type": "depends_on"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "rag-systems",
+      "type": "depends_on"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "rag-systems",
+      "type": "related_to"
+    },
+    {
+      "source": "langgraph",
+      "target": "langgraph-fundamentals",
+      "type": "depends_on"
+    },
+    {
+      "source": "langgraph",
+      "target": "langgraph-fundamentals",
+      "type": "related_to"
+    },
+    {
+      "source": "langgraph-fundamentals",
+      "target": "langgraph-human-in-the-loop",
+      "type": "depends_on"
+    },
+    {
+      "source": "langgraph-fundamentals",
+      "target": "langgraph",
+      "type": "depends_on"
+    },
+    {
+      "source": "langgraph-fundamentals",
+      "target": "langgraph",
+      "type": "related_to"
+    },
+    {
+      "source": "langgraph-persistence",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "langsmith",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "observability-prompt-versioning",
+      "type": "alternative_to"
+    },
+    {
+      "source": "math-critic",
+      "target": "git",
+      "type": "alternative_to"
+    },
+    {
+      "source": "observability-decision-tracing",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "observability-error-retry-tracking",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "observability-guardrails-safety",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "observability-llm-call-tracing",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "observability-multi-agent-coordination",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "observability-prompt-versioning",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "observability-token-cost-tracking",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "observability-tool-call-tracking",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "obsidian-cli",
+      "target": "obsidian-cycle-close",
+      "type": "depends_on"
+    },
+    {
+      "source": "obsidian-cycle-close",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "pentest-c2-operator",
+      "target": "observability-multi-agent-coordination",
+      "type": "depends_on"
+    },
+    {
+      "source": "pentest-c2-operator",
+      "target": "transilience-ai-threat-testing",
+      "type": "depends_on"
+    },
+    {
+      "source": "pentest-llm-redteam",
+      "target": "langgraph-human-in-the-loop",
+      "type": "alternative_to"
+    },
+    {
+      "source": "pocock-zoom-out",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "prompt-master",
+      "target": "transilience-ai-threat-testing",
+      "type": "depends_on"
+    },
+    {
+      "source": "prompt-master",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "prompt-master",
+      "target": "observability-multi-agent-coordination",
+      "type": "depends_on"
+    },
+    {
+      "source": "prompt-master",
+      "target": "langgraph-human-in-the-loop",
+      "type": "depends_on"
+    },
+    {
+      "source": "prompt-master",
+      "target": "speckit-taskstoissues",
+      "type": "related_to"
+    },
+    {
+      "source": "prompt-master",
+      "target": "observability-tool-call-tracking",
+      "type": "related_to"
+    },
+    {
+      "source": "prompt-master",
+      "target": "ml-code-store-promote",
+      "type": "alternative_to"
+    },
+    {
+      "source": "prompt-master",
+      "target": "speckit-analyze",
+      "type": "alternative_to"
+    },
+    {
+      "source": "rag-systems",
+      "target": "langchain-rag",
+      "type": "depends_on"
+    },
+    {
+      "source": "rag-systems",
+      "target": "langchain-rag",
+      "type": "alternative_to"
+    },
+    {
+      "source": "report-writing",
+      "target": "observability-multi-agent-coordination",
+      "type": "depends_on"
+    },
+    {
+      "source": "requirements-engineering",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "research-synth",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "research-synth",
+      "target": "framework-selection",
+      "type": "related_to"
+    },
+    {
+      "source": "security-arsenal",
+      "target": "langchain-dependencies",
+      "type": "depends_on"
+    },
+    {
+      "source": "skill-router",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "skill-router",
+      "target": "langgraph-human-in-the-loop",
+      "type": "alternative_to"
+    },
+    {
+      "source": "speckit-analyze",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "speckit-analyze",
+      "target": "next-task",
+      "type": "depends_on"
+    },
+    {
+      "source": "speckit-implement",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "speckit-specify",
+      "target": "ecc-agent-introspection",
+      "type": "depends_on"
+    },
+    {
+      "source": "speckit-specify",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "speckit-specify",
+      "target": "pocock-handoff",
+      "type": "depends_on"
+    },
+    {
+      "source": "speckit-tasks",
+      "target": "observability-multi-agent-coordination",
+      "type": "depends_on"
+    },
+    {
+      "source": "team-security",
+      "target": "langchain-fundamentals",
+      "type": "alternative_to"
+    },
+    {
+      "source": "to-prd",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "token-optimizer",
+      "target": "observability-decision-tracing",
+      "type": "depends_on"
+    },
+    {
+      "source": "token-optimizer",
+      "target": "observability-token-cost-tracking",
+      "type": "depends_on"
+    },
+    {
+      "source": "transilience-hackerone",
+      "target": "langgraph-human-in-the-loop",
+      "type": "depends_on"
+    },
+    {
+      "source": "transilience-reconnaissance",
+      "target": "find-skills",
+      "type": "related_to"
+    },
+    {
+      "source": "verbalized-sampling",
+      "target": "observability-token-cost-tracking",
+      "type": "alternative_to"
+    },
+    {
+      "source": "verbalized-sampling",
+      "target": "owasp-security",
+      "type": "alternative_to"
+    },
+    {
+      "source": "verbalized-sampling",
+      "target": "transilience-hackerone",
+      "type": "alternative_to"
+    },
+    {
+      "source": "verbalized-sampling",
+      "target": "speckit-taskstoissues",
+      "type": "alternative_to"
+    },
+    {
+      "source": "verbalized-sampling",
+      "target": "pentest-forensics-analyst",
+      "type": "alternative_to"
+    },
+    {
+      "source": "web2-vuln-classes",
+      "target": "transilience-hackerone",
+      "type": "depends_on"
+    },
+    {
+      "source": "web2-vuln-classes",
+      "target": "pentest-ad-attacker",
+      "type": "depends_on"
+    },
+    {
+      "source": "web3-audit",
+      "target": "obsidian-cycle-close",
+      "type": "depends_on"
+    },
+    {
+      "source": "web3-audit",
+      "target": "requirements-engineering",
+      "type": "alternative_to"
+    },
+    {
+      "source": "wiki-ingest",
+      "target": "langgraph-human-in-the-loop",
+      "type": "depends_on"
+    }
+  ],
+  "implicit_edges": [
+    {
+      "source": "agent-browser-cli",
+      "target": "anthropic-sdk",
+      "type": "shares_tech",
+      "via": "anthropic,claude,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "agent-browser-cli",
+      "target": "claude-code-patterns",
+      "type": "shares_tech",
+      "via": "anthropic,claude,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "agent-browser-cli",
+      "target": "langchain",
+      "type": "shares_tech",
+      "via": "anthropic,claude,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "agent-browser-cli",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "anthropic-sdk",
+      "type": "shares_tech",
+      "via": "anthropic,claude,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "claude-code-patterns",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,langsmith,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "claude-config-audit",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "deep-agents-core",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "deep-agents-memory",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "langchain",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,langsmith,openai,rag",
+      "shared_count": "7"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "langchain-dependencies",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,langsmith,openai",
+      "shared_count": "6"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "langchain-fundamentals",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,openai",
+      "shared_count": "5"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "langchain-middleware",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,langsmith,openai,rag",
+      "shared_count": "7"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,langsmith,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,langchain,langsmith,llamaindex,openai,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,langsmith,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langgraph,langsmith,openai,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "bug-bounty",
+      "type": "shares_tech",
+      "via": "aws,claude,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "claude-code-patterns",
+      "type": "shares_tech",
+      "via": "anthropic,aws,claude,github,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "langchain",
+      "type": "shares_tech",
+      "via": "anthropic,claude,github,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "langchain-dependencies",
+      "type": "shares_tech",
+      "via": "anthropic,aws,bedrock,claude",
+      "shared_count": "4"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "pentest-llm-redteam",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "spec-new",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "arca-vault-sync",
+      "target": "bug-bounty",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "arca-vault-sync",
+      "target": "claude-code-patterns",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "arca-vault-sync",
+      "target": "find-skills",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "arca-vault-sync",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "arca-vault-sync",
+      "target": "review-pr",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "arca-vault-sync",
+      "target": "speckit-constitution",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "arca-vault-sync",
+      "target": "speckit-plan",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "claude-code-patterns",
+      "type": "shares_tech",
+      "via": "aws,claude,git,github",
+      "shared_count": "4"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "find-skills",
+      "type": "shares_tech",
+      "via": "claude,docker,express,git,github,kubernetes",
+      "shared_count": "6"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "review-pr",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,docker,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "speckit-constitution",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "speckit-plan",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "clarify",
+      "target": "ecc-verification-loop",
+      "type": "shares_tech",
+      "via": "claude,git,ruff",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "deep-agents-core",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,pytest",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "deep-agents-memory",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "engram-rehydrate",
+      "type": "shares_tech",
+      "via": "anthropic,claude,git",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "find-skills",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "htb-new",
+      "type": "shares_tech",
+      "via": "anthropic,claude,git",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "langchain",
+      "type": "shares_tech",
+      "via": "anthropic,claude,github,langchain,langgraph,langsmith,rag",
+      "shared_count": "7"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "langchain-dependencies",
+      "type": "shares_tech",
+      "via": "anthropic,aws,claude,langchain,langgraph,langsmith,pytest",
+      "shared_count": "7"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "langchain-fundamentals",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "langchain-middleware",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,langsmith,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,github,langchain,langgraph,langsmith,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,git,github,langchain,pytest",
+      "shared_count": "6"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "pentest-llm-redteam",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,langchain,langsmith,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "review-pr",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,langsmith,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "spec-new",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "speckit-constitution",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "speckit-plan",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langgraph,langsmith,pruning,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "langchain",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "langchain-dependencies",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "langchain-fundamentals",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-config-audit",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "deep-agents-memory",
+      "type": "shares_tech",
+      "via": "claude,lambda,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "langchain",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "langchain-dependencies",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,pytest",
+      "shared_count": "4"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "langchain-fundamentals",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "langchain-middleware",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "claude,lambda,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "claude,langchain,pytest",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,lambda,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langchain",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langchain-dependencies",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langchain-fundamentals",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langchain-middleware",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,lambda,langchain,langgraph",
+      "shared_count": "5"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,lambda",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,lambda,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "engram-rehydrate",
+      "target": "htb-new",
+      "type": "shares_tech",
+      "via": "anthropic,claude,git",
+      "shared_count": "3"
+    },
+    {
+      "source": "engram-rehydrate",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,git",
+      "shared_count": "3"
+    },
+    {
+      "source": "find-skills",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "find-skills",
+      "target": "review-pr",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "find-skills",
+      "target": "speckit-constitution",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "find-skills",
+      "target": "speckit-plan",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "htb-new",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,git",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain",
+      "target": "langchain-dependencies",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,langchain,langgraph,langsmith,openai",
+      "shared_count": "7"
+    },
+    {
+      "source": "langchain",
+      "target": "langchain-fundamentals",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,openai",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain",
+      "target": "langchain-middleware",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,langchain,openai,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "langchain",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,fastapi,langchain,langgraph,langsmith,openai,rag",
+      "shared_count": "8"
+    },
+    {
+      "source": "langchain",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,github,langchain,langgraph,langsmith,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "langchain",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,github,langchain",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain",
+      "target": "ml-security",
+      "type": "shares_tech",
+      "via": "claude,fastapi,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,openai,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain",
+      "target": "pentest-llm-redteam",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain",
+      "target": "prompt-master",
+      "type": "shares_tech",
+      "via": "claude,github,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,faiss,langchain,langsmith,openai,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "langchain",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,fastapi,langchain,langgraph,langsmith,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "langchain",
+      "target": "spec-new",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,fastapi,langgraph,langsmith,openai,rag",
+      "shared_count": "7"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langchain-fundamentals",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,openai",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langchain-middleware",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,langchain,openai,pinecone",
+      "shared_count": "6"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,langsmith,openai",
+      "shared_count": "6"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,langsmith",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,huggingface,langsmith,openai",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,pytest",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "ml-security",
+      "type": "shares_tech",
+      "via": "claude,huggingface,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,huggingface,openai",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,faiss,langchain,langsmith,openai,pinecone,qdrant,weaviate",
+      "shared_count": "8"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,langsmith",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-dependencies",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langgraph,langsmith,openai,weaviate",
+      "shared_count": "6"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "langchain-middleware",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph,openai",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,langchain,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-fundamentals",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langgraph,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "langchain-rag",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-middleware",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,openai,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,faiss,langchain,openai,pinecone,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "langchain-rag",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "langgraph",
+      "target": "langgraph-persistence",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,langgraph",
+      "shared_count": "4"
+    },
+    {
+      "source": "langgraph",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,langsmith,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "langgraph",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "langgraph",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph",
+      "target": "ml-security",
+      "type": "shares_tech",
+      "via": "claude,fastapi,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,lambda,openai,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "langgraph",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langgraph",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "langgraph",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,lambda,langchain,langsmith,openai,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "langgraph",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,fastapi,langchain,langgraph,langsmith,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "langgraph",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,fastapi,langgraph,langsmith,openai,rag",
+      "shared_count": "7"
+    },
+    {
+      "source": "langgraph-persistence",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph-persistence",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph-persistence",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph-persistence",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph-persistence",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph-persistence",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langsmith",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "claude,langsmith,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "langsmith",
+      "target": "mcp-development",
+      "type": "shares_tech",
+      "via": "claude,github,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "langsmith",
+      "target": "pentest-llm-redteam",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "langsmith",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,langchain,langsmith,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "langsmith",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langgraph,langsmith,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "langsmith",
+      "target": "spec-new",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "langsmith",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "claude,langgraph,langsmith,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "ml-security",
+      "type": "shares_tech",
+      "via": "claude,huggingface,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai,rag,transformers",
+      "shared_count": "5"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,huggingface,openai,transformers",
+      "shared_count": "5"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "pentest-llm-redteam",
+      "type": "shares_tech",
+      "via": "claude,rag,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,langsmith,openai,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,docker,langsmith,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai,rag,transformers",
+      "shared_count": "6"
+    },
+    {
+      "source": "mcp-development",
+      "target": "observability-error-retry-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "mcp-development",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "mcp-development",
+      "target": "review-pr",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "mcp-development",
+      "target": "speckit-constitution",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "mcp-development",
+      "target": "speckit-plan",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-security",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "claude,numpy,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-security",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "claude,huggingface,numpy,openai,sklearn",
+      "shared_count": "5"
+    },
+    {
+      "source": "ml-security",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,numpy,openai,sklearn",
+      "shared_count": "4"
+    },
+    {
+      "source": "ml-security",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,fastapi,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-security",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "claude,fastapi,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "multimodal-ai",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "anthropic,claude,faiss,numpy,openai,transformers",
+      "shared_count": "6"
+    },
+    {
+      "source": "multimodal-ai",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "multimodal-ai",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "multimodal-ai",
+      "target": "pentest-llm-redteam",
+      "type": "shares_tech",
+      "via": "claude,rag,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "multimodal-ai",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,faiss,lambda,numpy,openai,rag",
+      "shared_count": "6"
+    },
+    {
+      "source": "multimodal-ai",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai,rag,transformers",
+      "shared_count": "5"
+    },
+    {
+      "source": "nlp-engineering",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "nlp-engineering",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "nlp-engineering",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,faiss,numpy,openai,sklearn",
+      "shared_count": "5"
+    },
+    {
+      "source": "nlp-engineering",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai,transformers",
+      "shared_count": "4"
+    },
+    {
+      "source": "observability-error-retry-tracking",
+      "target": "observability-llm-call-tracing",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langchain",
+      "shared_count": "3"
+    },
+    {
+      "source": "observability-llm-call-tracing",
+      "target": "observability-token-cost-tracking",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "observability-llm-call-tracing",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,langchain,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "observability-llm-call-tracing",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "observability-token-cost-tracking",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "claude,langsmith,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "observability-token-cost-tracking",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "anthropic,claude,langsmith,openai",
+      "shared_count": "4"
+    },
+    {
+      "source": "pentest-llm-redteam",
+      "target": "spec-new",
+      "type": "shares_tech",
+      "via": "claude,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "pentest-llm-redteam",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "claude,rag,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "rag-systems",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "claude,langchain,langsmith,rag,sklearn",
+      "shared_count": "5"
+    },
+    {
+      "source": "rag-systems",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "chromadb,claude,langsmith,openai,rag,weaviate",
+      "shared_count": "6"
+    },
+    {
+      "source": "review-pr",
+      "target": "speckit-constitution",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "review-pr",
+      "target": "speckit-plan",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "skill-router",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "claude,fastapi,langgraph,langsmith,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "speckit-constitution",
+      "target": "speckit-plan",
+      "type": "shares_tech",
+      "via": "claude,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "cicd",
+      "target": "gentleman-ai",
+      "type": "shares_tech",
+      "via": "black,docker,mypy,pytest,ruff,terraform",
+      "shared_count": "6"
+    },
+    {
+      "source": "cicd",
+      "target": "persist",
+      "type": "shares_tech",
+      "via": "mypy,pytest,ruff",
+      "shared_count": "3"
+    },
+    {
+      "source": "cicd",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,github,pytest",
+      "shared_count": "3"
+    },
+    {
+      "source": "cicd",
+      "target": "python-init",
+      "type": "shares_tech",
+      "via": "mypy,pytest,ruff",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "gentleman-ai",
+      "type": "shares_tech",
+      "via": "aws,git,pytest,rag",
+      "shared_count": "4"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "git,github,pytest",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "langchain-dependencies",
+      "type": "shares_tech",
+      "via": "aws,pytest,qdrant",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "ml-fundamentals",
+      "type": "shares_tech",
+      "via": "git,mlflow,pytest,sklearn",
+      "shared_count": "4"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "persist",
+      "type": "shares_tech",
+      "via": "git,mypy,pytest,ruff",
+      "shared_count": "4"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,git,kubernetes,pytest",
+      "shared_count": "4"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "python-init",
+      "type": "shares_tech",
+      "via": "mypy,pytest,ruff",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "requirements-engineering",
+      "type": "shares_tech",
+      "via": "mlflow,pytest,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "testing",
+      "type": "shares_tech",
+      "via": "pandas,pytest,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "mcp-development",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "git,github,pytest",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-fundamentals",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "git,numpy,pytest,pytorch",
+      "shared_count": "4"
+    },
+    {
+      "source": "ml-fundamentals",
+      "target": "requirements-engineering",
+      "type": "shares_tech",
+      "via": "dvc,mlflow,pytest",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-fundamentals",
+      "target": "testing",
+      "type": "shares_tech",
+      "via": "numpy,pytest,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "persist",
+      "target": "python-init",
+      "type": "shares_tech",
+      "via": "mypy,pytest,ruff",
+      "shared_count": "3"
+    },
+    {
+      "source": "production",
+      "target": "testing",
+      "type": "shares_tech",
+      "via": "fastapi,github,numpy,pytest",
+      "shared_count": "4"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "cicd",
+      "type": "shares_tech",
+      "via": "docker,github,gitlab",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "cybersecurity",
+      "type": "shares_tech",
+      "via": "aws,flask,git,github,redis",
+      "shared_count": "5"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "docker-advanced",
+      "type": "shares_tech",
+      "via": "docker,git,github,pytorch,redis",
+      "shared_count": "5"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "git,github,kubernetes,pytorch,s3",
+      "shared_count": "5"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,git,github,kubernetes,pytorch",
+      "shared_count": "5"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "aws,docker,elasticsearch,flask,git,github,kubernetes,redis,s3",
+      "shared_count": "9"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,git,github,kubernetes",
+      "shared_count": "4"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "speckit-specify",
+      "type": "shares_tech",
+      "via": "git,github,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "transilience-reconnaissance",
+      "type": "shares_tech",
+      "via": "git,github,gitlab",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "web2-recon",
+      "type": "shares_tech",
+      "via": "elasticsearch,express,flask,git,github,redis",
+      "shared_count": "6"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,docker,elasticsearch,flask,github,gitlab,redis,s3",
+      "shared_count": "8"
+    },
+    {
+      "source": "cicd",
+      "target": "pentest-cicd-redteam",
+      "type": "shares_tech",
+      "via": "github,gitlab,terraform",
+      "shared_count": "3"
+    },
+    {
+      "source": "cicd",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,github,terraform",
+      "shared_count": "3"
+    },
+    {
+      "source": "cicd",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "docker,github,gitlab",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "cybersecurity",
+      "type": "shares_tech",
+      "via": "aws,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "git,github,langsmith",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "aws,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,github,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "cybersecurity",
+      "target": "docker-advanced",
+      "type": "shares_tech",
+      "via": "git,github,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "cybersecurity",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "aws,flask,git,github,redis",
+      "shared_count": "5"
+    },
+    {
+      "source": "cybersecurity",
+      "target": "speckit-specify",
+      "type": "shares_tech",
+      "via": "git,github,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "cybersecurity",
+      "target": "web2-recon",
+      "type": "shares_tech",
+      "via": "flask,git,github,redis",
+      "shared_count": "4"
+    },
+    {
+      "source": "cybersecurity",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,flask,github,redis",
+      "shared_count": "4"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "find-skills",
+      "type": "shares_tech",
+      "via": "docker,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "git,github,pytorch",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,git,github,pytorch",
+      "shared_count": "4"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "docker,git,github,redis",
+      "shared_count": "4"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "speckit-specify",
+      "type": "shares_tech",
+      "via": "git,github,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "web2-recon",
+      "type": "shares_tech",
+      "via": "git,github,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "docker,github,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "find-skills",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "git,github,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "find-skills",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,git,github,kubernetes",
+      "shared_count": "4"
+    },
+    {
+      "source": "find-skills",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "docker,git,github,kubernetes",
+      "shared_count": "4"
+    },
+    {
+      "source": "find-skills",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,git,github,kubernetes",
+      "shared_count": "4"
+    },
+    {
+      "source": "find-skills",
+      "target": "web2-recon",
+      "type": "shares_tech",
+      "via": "express,git,github",
+      "shared_count": "3"
+    },
+    {
+      "source": "mlops",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "git,github,kubernetes,numpy,pytorch",
+      "shared_count": "5"
+    },
+    {
+      "source": "mlops",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "git,github,kubernetes,s3",
+      "shared_count": "4"
+    },
+    {
+      "source": "mlops",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "git,github,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "mlops",
+      "target": "testing",
+      "type": "shares_tech",
+      "via": "github,numpy,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "mlops",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "github,lambda,s3",
+      "shared_count": "3"
+    },
+    {
+      "source": "production",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "docker,git,github,kubernetes",
+      "shared_count": "4"
+    },
+    {
+      "source": "production",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,git,github,kubernetes",
+      "shared_count": "4"
+    },
+    {
+      "source": "security-arsenal",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,git,github,kubernetes",
+      "shared_count": "4"
+    },
+    {
+      "source": "security-arsenal",
+      "target": "speckit-specify",
+      "type": "shares_tech",
+      "via": "git,github,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "security-arsenal",
+      "target": "web2-recon",
+      "type": "shares_tech",
+      "via": "django,elasticsearch,flask,git,github,redis",
+      "shared_count": "6"
+    },
+    {
+      "source": "security-arsenal",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,docker,elasticsearch,flask,github,redis,s3",
+      "shared_count": "7"
+    },
+    {
+      "source": "speckit-specify",
+      "target": "web2-recon",
+      "type": "shares_tech",
+      "via": "git,github,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "web2-recon",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "elasticsearch,flask,github,redis",
+      "shared_count": "4"
+    },
+    {
+      "source": "agile-ml",
+      "target": "gentleman-ai",
+      "type": "shares_tech",
+      "via": "docker,mlflow,terraform",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "gentleman-ai",
+      "type": "shares_tech",
+      "via": "aws,docker,git,kubernetes,redis",
+      "shared_count": "5"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "htb-methodology",
+      "type": "shares_tech",
+      "via": "docker,git,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "kubernetes",
+      "type": "shares_tech",
+      "via": "docker,kubernetes,pytorch",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "pentest-container-breakout",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "pentest-forensics-analyst",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes,s3",
+      "shared_count": "4"
+    },
+    {
+      "source": "bug-bounty",
+      "target": "transilience-cloud-containers",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes,s3",
+      "shared_count": "4"
+    },
+    {
+      "source": "cicd",
+      "target": "full-bug-hunt",
+      "type": "shares_tech",
+      "via": "docker,mypy,ruff",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "gentleman-ai",
+      "type": "shares_tech",
+      "via": "docker,git,redis,vllm",
+      "shared_count": "4"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "inference-optimization",
+      "type": "shares_tech",
+      "via": "docker,huggingface,openai,pytorch,transformers,vllm",
+      "shared_count": "6"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "docker,huggingface,openai,transformers,vllm",
+      "shared_count": "5"
+    },
+    {
+      "source": "find-skills",
+      "target": "gentleman-ai",
+      "type": "shares_tech",
+      "via": "docker,git,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "find-skills",
+      "target": "htb-methodology",
+      "type": "shares_tech",
+      "via": "docker,git,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "full-bug-hunt",
+      "target": "gentleman-ai",
+      "type": "shares_tech",
+      "via": "docker,mypy,ruff",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "htb-methodology",
+      "type": "shares_tech",
+      "via": "docker,git,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "kubernetes",
+      "type": "shares_tech",
+      "via": "docker,helm,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "docker,mlflow,rag,vllm",
+      "shared_count": "4"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "pentest-c2-operator",
+      "type": "shares_tech",
+      "via": "aws,black,docker",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "pentest-container-breakout",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "pentest-forensics-analyst",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "aws,docker,git,kubernetes,redis",
+      "shared_count": "5"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "docker,rag,redis,sklearn",
+      "shared_count": "4"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,git,helm,kubernetes,terraform",
+      "shared_count": "5"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "suggest",
+      "type": "shares_tech",
+      "via": "docker,git,terraform",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "transilience-cloud-containers",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,docker,rag,redis",
+      "shared_count": "4"
+    },
+    {
+      "source": "htb-methodology",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,git,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "htb-methodology",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "docker,git,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "htb-methodology",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,git,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "docker,huggingface,openai,qlora,quantization,tensorrt,transformers,vllm",
+      "shared_count": "8"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,fastapi,numpy,onnx,pytorch,quantization,tensorrt",
+      "shared_count": "7"
+    },
+    {
+      "source": "kubernetes",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,kubernetes,pytorch",
+      "shared_count": "3"
+    },
+    {
+      "source": "kubernetes",
+      "target": "speckit-implement",
+      "type": "shares_tech",
+      "via": "docker,helm,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "docker,quantization,tensorrt",
+      "shared_count": "3"
+    },
+    {
+      "source": "pentest-container-breakout",
+      "target": "pentest-forensics-analyst",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "pentest-container-breakout",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "pentest-container-breakout",
+      "target": "transilience-cloud-containers",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes",
+      "shared_count": "3"
+    },
+    {
+      "source": "pentest-forensics-analyst",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes,s3",
+      "shared_count": "4"
+    },
+    {
+      "source": "pentest-forensics-analyst",
+      "target": "transilience-cloud-containers",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes,lambda,s3",
+      "shared_count": "5"
+    },
+    {
+      "source": "pentest-forensics-analyst",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,docker,lambda,s3",
+      "shared_count": "4"
+    },
+    {
+      "source": "security-arsenal",
+      "target": "transilience-cloud-containers",
+      "type": "shares_tech",
+      "via": "aws,docker,kubernetes,s3",
+      "shared_count": "4"
+    },
+    {
+      "source": "skill-router",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "docker,rag,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "speckit-implement",
+      "target": "suggest",
+      "type": "shares_tech",
+      "via": "docker,git,terraform",
+      "shared_count": "3"
+    },
+    {
+      "source": "transilience-cloud-containers",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,docker,lambda,s3",
+      "shared_count": "4"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "ml-new",
+      "type": "shares_tech",
+      "via": "aws,git,helm,mlflow,rag",
+      "shared_count": "5"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "git,kubernetes,mlflow,sklearn",
+      "shared_count": "4"
+    },
+    {
+      "source": "ml-fundamentals",
+      "target": "ml-new",
+      "type": "shares_tech",
+      "via": "dvc,git,mlflow",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-fundamentals",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "dvc,git,mlflow,numpy,pytorch,sklearn",
+      "shared_count": "6"
+    },
+    {
+      "source": "ml-new",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "dvc,git,mlflow,sagemaker",
+      "shared_count": "4"
+    },
+    {
+      "source": "ml-new",
+      "target": "requirements-engineering",
+      "type": "shares_tech",
+      "via": "dvc,mlflow,shap",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "observability-multi-agent-coordination",
+      "type": "shares_tech",
+      "via": "autogen,crewai,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "ai-agents-engineering",
+      "target": "framework-selection",
+      "type": "shares_tech",
+      "via": "langchain,langgraph,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "framework-selection",
+      "type": "shares_tech",
+      "via": "langchain,langgraph,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-core",
+      "target": "langgraph-fundamentals",
+      "type": "shares_tech",
+      "via": "lambda,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "deep-agents-memory",
+      "target": "langgraph-fundamentals",
+      "type": "shares_tech",
+      "via": "lambda,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "framework-selection",
+      "target": "langchain",
+      "type": "shares_tech",
+      "via": "langchain,langgraph,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "framework-selection",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "langchain,langgraph,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "framework-selection",
+      "target": "langsmith",
+      "type": "shares_tech",
+      "via": "langchain,langgraph,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "framework-selection",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "langchain,langgraph,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph",
+      "target": "langgraph-fundamentals",
+      "type": "shares_tech",
+      "via": "lambda,langchain,langgraph",
+      "shared_count": "3"
+    },
+    {
+      "source": "langgraph",
+      "target": "model-interpretability",
+      "type": "shares_tech",
+      "via": "fastapi,lambda,langsmith",
+      "shared_count": "3"
+    },
+    {
+      "source": "mlops",
+      "target": "model-interpretability",
+      "type": "shares_tech",
+      "via": "lambda,langsmith,numpy,pytorch,sklearn",
+      "shared_count": "5"
+    },
+    {
+      "source": "mlops",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "lambda,langsmith,numpy,sklearn",
+      "shared_count": "4"
+    },
+    {
+      "source": "model-interpretability",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "lambda,langsmith,numpy,sklearn",
+      "shared_count": "4"
+    },
+    {
+      "source": "model-interpretability",
+      "target": "skill-router",
+      "type": "shares_tech",
+      "via": "fastapi,langsmith,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "model-interpretability",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "fastapi,langsmith,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "ml-security",
+      "type": "shares_tech",
+      "via": "huggingface,openai,pytorch,tensorflow",
+      "shared_count": "4"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "huggingface,openai,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "langgraph",
+      "type": "shares_tech",
+      "via": "fastapi,lambda,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "ml-security",
+      "type": "shares_tech",
+      "via": "fastapi,huggingface,numpy,openai,pytorch",
+      "shared_count": "5"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "lambda,numpy,openai,transformers",
+      "shared_count": "4"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "huggingface,numpy,openai,transformers",
+      "shared_count": "4"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "lambda,numpy,openai",
+      "shared_count": "3"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "token-optimizer",
+      "type": "shares_tech",
+      "via": "fastapi,openai,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "anthropic-sdk",
+      "target": "ml-new",
+      "type": "shares_tech",
+      "via": "aws,bedrock,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "claude-code-patterns",
+      "target": "ml-new",
+      "type": "shares_tech",
+      "via": "aws,git,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "gentleman-ai",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "qdrant,rag,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "math-critic",
+      "type": "shares_tech",
+      "via": "lora,qlora,rag",
+      "shared_count": "3"
+    },
+    {
+      "source": "math-critic",
+      "target": "rag-systems",
+      "type": "shares_tech",
+      "via": "numpy,rag,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "bb-methodology",
+      "target": "bug-bounty",
+      "type": "shares_tech",
+      "via": "aws,redis,s3",
+      "shared_count": "3"
+    },
+    {
+      "source": "bb-methodology",
+      "target": "security-arsenal",
+      "type": "shares_tech",
+      "via": "aws,redis,s3",
+      "shared_count": "3"
+    },
+    {
+      "source": "bb-methodology",
+      "target": "web2-vuln-classes",
+      "type": "shares_tech",
+      "via": "aws,redis,s3",
+      "shared_count": "3"
+    },
+    {
+      "source": "cybersecurity",
+      "target": "gentleman-ai",
+      "type": "shares_tech",
+      "via": "aws,git,redis",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "ml-fundamentals",
+      "type": "shares_tech",
+      "via": "git,pytorch,tensorflow,transformers",
+      "shared_count": "4"
+    },
+    {
+      "source": "mlops",
+      "target": "pentest-forensics-analyst",
+      "type": "shares_tech",
+      "via": "kubernetes,lambda,s3",
+      "shared_count": "3"
+    },
+    {
+      "source": "mlops",
+      "target": "transilience-cloud-containers",
+      "type": "shares_tech",
+      "via": "kubernetes,lambda,s3",
+      "shared_count": "3"
+    },
+    {
+      "source": "kubernetes",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "kubernetes,pytorch,wandb",
+      "shared_count": "3"
+    },
+    {
+      "source": "dl-engineering",
+      "target": "edge-ml",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "dl-engineering",
+      "target": "inference-optimization",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "dl-engineering",
+      "target": "ml-fundamentals",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "dl-engineering",
+      "target": "model-interpretability",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "docker-advanced",
+      "target": "edge-ml",
+      "type": "shares_tech",
+      "via": "pytorch,tensorflow,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "edge-ml",
+      "target": "inference-optimization",
+      "type": "shares_tech",
+      "via": "numpy,onnx,pytorch,quantization,tensorrt,transformers",
+      "shared_count": "6"
+    },
+    {
+      "source": "edge-ml",
+      "target": "ml-fundamentals",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,tensorflow,transformers",
+      "shared_count": "4"
+    },
+    {
+      "source": "edge-ml",
+      "target": "ml-security",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,tensorflow",
+      "shared_count": "3"
+    },
+    {
+      "source": "edge-ml",
+      "target": "model-interpretability",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "edge-ml",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "numpy,onnx,pytorch,quantization,tensorrt",
+      "shared_count": "5"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "ml-fundamentals",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "lambda,numpy,pytorch,triton",
+      "shared_count": "4"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "model-interpretability",
+      "type": "shares_tech",
+      "via": "fastapi,lambda,numpy,pytorch,transformers",
+      "shared_count": "5"
+    },
+    {
+      "source": "ml-fundamentals",
+      "target": "ml-security",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,sklearn,tensorflow",
+      "shared_count": "4"
+    },
+    {
+      "source": "ml-fundamentals",
+      "target": "model-interpretability",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,sklearn,transformers",
+      "shared_count": "4"
+    },
+    {
+      "source": "ml-security",
+      "target": "mlops",
+      "type": "shares_tech",
+      "via": "numpy,pytorch,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-security",
+      "target": "model-interpretability",
+      "type": "shares_tech",
+      "via": "fastapi,numpy,pytorch,sklearn",
+      "shared_count": "4"
+    },
+    {
+      "source": "ml-security",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "fastapi,numpy,pytorch",
+      "shared_count": "3"
+    },
+    {
+      "source": "model-interpretability",
+      "target": "production",
+      "type": "shares_tech",
+      "via": "fastapi,numpy,pytorch",
+      "shared_count": "3"
+    },
+    {
+      "source": "inference-optimization",
+      "target": "reinforcement-learning",
+      "type": "shares_tech",
+      "via": "lambda,numpy,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "model-interpretability",
+      "target": "multimodal-ai",
+      "type": "shares_tech",
+      "via": "lambda,numpy,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "model-interpretability",
+      "target": "reinforcement-learning",
+      "type": "shares_tech",
+      "via": "lambda,numpy,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "multimodal-ai",
+      "target": "reinforcement-learning",
+      "type": "shares_tech",
+      "via": "lambda,numpy,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-fundamentals",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "numpy,sklearn,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "ml-security",
+      "target": "testing",
+      "type": "shares_tech",
+      "via": "fastapi,numpy,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "model-interpretability",
+      "target": "nlp-engineering",
+      "type": "shares_tech",
+      "via": "numpy,sklearn,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "model-interpretability",
+      "target": "testing",
+      "type": "shares_tech",
+      "via": "fastapi,numpy,sklearn",
+      "shared_count": "3"
+    },
+    {
+      "source": "edge-ml",
+      "target": "llm-engineering",
+      "type": "shares_tech",
+      "via": "quantization,tensorrt,transformers",
+      "shared_count": "3"
+    },
+    {
+      "source": "llm-engineering",
+      "target": "reinforcement-learning",
+      "type": "shares_tech",
+      "via": "dpo,rlhf,transformers",
+      "shared_count": "3"
+    }
+  ],
+  "entity_index": {
+    "claude": [
+      "adr-new",
+      "agent-browser-cli",
+      "ai-agents-engineering",
+      "aidesigner-frontend",
+      "anthropic-sdk",
+      "arca-vault-sync",
+      "auto-tune-review",
+      "bug-bounty",
+      "clarify",
+      "claude-code-patterns",
+      "claude-config-audit",
+      "dashboard-build",
+      "deep-agents-core",
+      "deep-agents-memory",
+      "design-motion-principles",
+      "ecc-eval-harness",
+      "ecc-verification-loop",
+      "email-triage",
+      "engram-rehydrate",
+      "engram-to-obsidian",
+      "eval-skeleton",
+      "find-skills",
+      "htb-new",
+      "justify",
+      "karpathy-guidelines",
+      "langchain",
+      "langchain-dependencies",
+      "langchain-fundamentals",
+      "langchain-middleware",
+      "langchain-rag",
+      "langgraph",
+      "langgraph-persistence",
+      "langsmith",
+      "live-transcribe",
+      "llm-engineering",
+      "mcp-development",
+      "ml-security",
+      "multimodal-ai",
+      "next-task",
+      "nlp-engineering",
+      "observability-decision-tracing",
+      "observability-error-retry-tracking",
+      "observability-llm-call-tracing",
+      "observability-prompt-versioning",
+      "observability-token-cost-tracking",
+      "obsidian-cycle-close",
+      "obsidian-status",
+      "pentest-ad-attacker",
+      "pentest-llm-redteam",
+      "prompt-master",
+      "rag-systems",
+      "redteam-new",
+      "review-pr",
+      "skill-effectiveness",
+      "skill-router",
+      "spec-new",
+      "speckit-constitution",
+      "speckit-plan",
+      "token-optimizer",
+      "transilience-hackthebox",
+      "wiki-ingest"
+    ],
+    "git": [
+      "arca-vault-sync",
+      "auto-tune-review",
+      "bug-bounty",
+      "clarify",
+      "claude-code-patterns",
+      "cybersecurity",
+      "diagnose",
+      "docker-advanced",
+      "ecc-agent-introspection",
+      "ecc-verification-loop",
+      "engram-rehydrate",
+      "find-skills",
+      "gentleman-ai",
+      "git",
+      "htb-methodology",
+      "htb-new",
+      "mcp-development",
+      "ml-code-store-promote",
+      "ml-fundamentals",
+      "ml-new",
+      "mlops",
+      "obsidian-status",
+      "persist",
+      "production",
+      "review-pr",
+      "security-arsenal",
+      "speckit-analyze",
+      "speckit-checklist",
+      "speckit-clarify",
+      "speckit-constitution",
+      "speckit-implement",
+      "speckit-plan",
+      "speckit-specify",
+      "speckit-tasks",
+      "speckit-taskstoissues",
+      "suggest",
+      "team-debug",
+      "team-ml-review",
+      "team-refactor",
+      "team-security",
+      "transilience-reconnaissance",
+      "voting-review",
+      "web2-recon"
+    ],
+    "github": [
+      "agent-browser-cli",
+      "anthropic-sdk",
+      "arca-vault-sync",
+      "bug-bounty",
+      "cicd",
+      "claude-code-patterns",
+      "cybersecurity",
+      "docker-advanced",
+      "email-triage",
+      "find-skills",
+      "git",
+      "justify",
+      "karpathy-guidelines",
+      "langchain",
+      "langsmith",
+      "mcp-development",
+      "mlops",
+      "pentest-cicd-redteam",
+      "pentest-llm-redteam",
+      "production",
+      "prompt-master",
+      "review-pr",
+      "security-arsenal",
+      "spec-new",
+      "speckit-analyze",
+      "speckit-checklist",
+      "speckit-clarify",
+      "speckit-constitution",
+      "speckit-implement",
+      "speckit-plan",
+      "speckit-specify",
+      "speckit-tasks",
+      "speckit-taskstoissues",
+      "testing",
+      "transilience-cve-poc-generator",
+      "transilience-reconnaissance",
+      "triage-validation",
+      "web2-recon",
+      "web2-vuln-classes"
+    ],
+    "anthropic": [
+      "agent-browser-cli",
+      "ai-agents-engineering",
+      "anthropic-sdk",
+      "claude-code-patterns",
+      "claude-config-audit",
+      "deep-agents-memory",
+      "engram-rehydrate",
+      "htb-new",
+      "langchain",
+      "langchain-dependencies",
+      "langchain-fundamentals",
+      "langchain-middleware",
+      "langchain-rag",
+      "langgraph",
+      "langgraph-persistence",
+      "llm-engineering",
+      "mcp-development",
+      "multimodal-ai",
+      "nlp-engineering",
+      "observability-error-retry-tracking",
+      "observability-llm-call-tracing",
+      "observability-token-cost-tracking",
+      "token-optimizer"
+    ],
+    "langchain": [
+      "ai-agents-engineering",
+      "claude-code-patterns",
+      "deep-agents-core",
+      "deep-agents-memory",
+      "deep-agents-orchestration",
+      "framework-selection",
+      "langchain",
+      "langchain-dependencies",
+      "langchain-fundamentals",
+      "langchain-middleware",
+      "langchain-rag",
+      "langgraph",
+      "langgraph-fundamentals",
+      "langgraph-human-in-the-loop",
+      "langgraph-persistence",
+      "langsmith",
+      "mcp-development",
+      "observability-error-retry-tracking",
+      "observability-llm-call-tracing",
+      "observability-tool-call-tracking",
+      "rag-new",
+      "rag-systems",
+      "skill-router"
+    ],
+    "rag": [
+      "ai-agents-engineering",
+      "anthropic-sdk",
+      "claude-code-patterns",
+      "framework-selection",
+      "gentleman-ai",
+      "langchain",
+      "langchain-rag",
+      "langgraph",
+      "langsmith",
+      "llm-engineering",
+      "math-critic",
+      "ml-new",
+      "multimodal-ai",
+      "owasp-security",
+      "pentest-llm-redteam",
+      "rag-new",
+      "rag-systems",
+      "redteam-new",
+      "skill-router",
+      "spec-new",
+      "token-optimizer",
+      "transilience-ai-threat-testing",
+      "web2-vuln-classes"
+    ],
+    "docker": [
+      "agile-ml",
+      "bug-bounty",
+      "cicd",
+      "docker-advanced",
+      "find-skills",
+      "full-bug-hunt",
+      "gentleman-ai",
+      "htb-methodology",
+      "inference-optimization",
+      "kubernetes",
+      "llm-engineering",
+      "pentest-c2-operator",
+      "pentest-container-breakout",
+      "pentest-forensics-analyst",
+      "production",
+      "security-arsenal",
+      "skill-router",
+      "speckit-implement",
+      "suggest",
+      "transilience-cloud-containers",
+      "web2-vuln-classes"
+    ],
+    "langgraph": [
+      "ai-agents-engineering",
+      "claude-code-patterns",
+      "deep-agents-core",
+      "deep-agents-memory",
+      "deep-agents-orchestration",
+      "framework-selection",
+      "langchain",
+      "langchain-dependencies",
+      "langchain-fundamentals",
+      "langchain-middleware",
+      "langgraph",
+      "langgraph-fundamentals",
+      "langgraph-human-in-the-loop",
+      "langgraph-persistence",
+      "langsmith",
+      "observability-multi-agent-coordination",
+      "skill-router",
+      "token-optimizer"
+    ],
+    "openai": [
+      "ai-agents-engineering",
+      "claude-config-audit",
+      "docker-advanced",
+      "inference-optimization",
+      "langchain",
+      "langchain-dependencies",
+      "langchain-fundamentals",
+      "langchain-rag",
+      "langgraph",
+      "llm-engineering",
+      "ml-security",
+      "multimodal-ai",
+      "nlp-engineering",
+      "observability-llm-call-tracing",
+      "observability-token-cost-tracking",
+      "prompt-master",
+      "rag-systems",
+      "token-optimizer"
+    ],
+    "aws": [
+      "anthropic-sdk",
+      "bb-methodology",
+      "bug-bounty",
+      "claude-code-patterns",
+      "cybersecurity",
+      "gentleman-ai",
+      "langchain-dependencies",
+      "ml-new",
+      "pentest-c2-operator",
+      "pentest-container-breakout",
+      "pentest-detection-engineer",
+      "pentest-forensics-analyst",
+      "report-writing",
+      "security-arsenal",
+      "transilience-cloud-containers",
+      "web2-vuln-classes"
+    ],
+    "numpy": [
+      "dl-engineering",
+      "edge-ml",
+      "inference-optimization",
+      "live-transcribe",
+      "math-critic",
+      "ml-fundamentals",
+      "ml-security",
+      "mlops",
+      "model-interpretability",
+      "multimodal-ai",
+      "nlp-engineering",
+      "production",
+      "rag-systems",
+      "reinforcement-learning",
+      "testing"
+    ],
+    "lambda": [
+      "deep-agents-core",
+      "deep-agents-memory",
+      "inference-optimization",
+      "langgraph",
+      "langgraph-fundamentals",
+      "mlops",
+      "model-interpretability",
+      "multimodal-ai",
+      "pentest-forensics-analyst",
+      "rag-systems",
+      "reinforcement-learning",
+      "transilience-cloud-containers",
+      "web2-vuln-classes"
+    ],
+    "langsmith": [
+      "ai-agents-engineering",
+      "claude-code-patterns",
+      "langchain",
+      "langchain-dependencies",
+      "langgraph",
+      "langsmith",
+      "llm-engineering",
+      "mlops",
+      "model-interpretability",
+      "observability-token-cost-tracking",
+      "rag-systems",
+      "skill-router",
+      "token-optimizer"
+    ],
+    "pytest": [
+      "adr-new",
+      "cicd",
+      "claude-code-patterns",
+      "deep-agents-core",
+      "gentleman-ai",
+      "langchain-dependencies",
+      "mcp-development",
+      "ml-fundamentals",
+      "persist",
+      "production",
+      "python-init",
+      "requirements-engineering",
+      "testing"
+    ],
+    "kubernetes": [
+      "bug-bounty",
+      "find-skills",
+      "gentleman-ai",
+      "htb-methodology",
+      "kubernetes",
+      "mlops",
+      "pentest-container-breakout",
+      "pentest-forensics-analyst",
+      "production",
+      "security-arsenal",
+      "speckit-implement",
+      "transilience-cloud-containers"
+    ],
+    "transformers": [
+      "dl-engineering",
+      "docker-advanced",
+      "edge-ml",
+      "inference-optimization",
+      "llm-engineering",
+      "ml-fundamentals",
+      "model-interpretability",
+      "multimodal-ai",
+      "nlp-engineering",
+      "pentest-llm-redteam",
+      "reinforcement-learning",
+      "token-optimizer"
+    ],
+    "pytorch": [
+      "bug-bounty",
+      "dl-engineering",
+      "docker-advanced",
+      "edge-ml",
+      "inference-optimization",
+      "kubernetes",
+      "ml-fundamentals",
+      "ml-security",
+      "mlops",
+      "model-interpretability",
+      "production"
+    ],
+    "redis": [
+      "bb-methodology",
+      "bug-bounty",
+      "cybersecurity",
+      "docker-advanced",
+      "gentleman-ai",
+      "requirements-engineering",
+      "security-arsenal",
+      "skill-router",
+      "speckit-specify",
+      "web2-recon",
+      "web2-vuln-classes"
+    ],
+    "sklearn": [
+      "gentleman-ai",
+      "math-critic",
+      "ml-fundamentals",
+      "ml-security",
+      "mlops",
+      "model-interpretability",
+      "nlp-engineering",
+      "rag-systems",
+      "skill-router",
+      "testing"
+    ],
+    "fastapi": [
+      "inference-optimization",
+      "langchain",
+      "langgraph",
+      "ml-security",
+      "model-interpretability",
+      "production",
+      "skill-router",
+      "testing",
+      "token-optimizer"
+    ],
+    "mlflow": [
+      "agile-ml",
+      "gentleman-ai",
+      "llm-engineering",
+      "ml-fundamentals",
+      "ml-new",
+      "mlops",
+      "requirements-engineering",
+      "team-ml-review"
+    ],
+    "s3": [
+      "bb-methodology",
+      "bug-bounty",
+      "mlops",
+      "pentest-forensics-analyst",
+      "security-arsenal",
+      "transilience-cloud-containers",
+      "triage-validation",
+      "web2-vuln-classes"
+    ],
+    "huggingface": [
+      "docker-advanced",
+      "inference-optimization",
+      "langchain-dependencies",
+      "llm-engineering",
+      "ml-security",
+      "nlp-engineering",
+      "research-synth"
+    ],
+    "ruff": [
+      "cicd",
+      "clarify",
+      "ecc-verification-loop",
+      "full-bug-hunt",
+      "gentleman-ai",
+      "persist",
+      "python-init"
+    ],
+    "faiss": [
+      "langchain",
+      "langchain-dependencies",
+      "langchain-rag",
+      "multimodal-ai",
+      "nlp-engineering",
+      "rag-systems"
+    ],
+    "terraform": [
+      "agile-ml",
+      "cicd",
+      "gentleman-ai",
+      "pentest-cicd-redteam",
+      "speckit-implement",
+      "suggest"
+    ],
+    "black": [
+      "cicd",
+      "gentleman-ai",
+      "pentest-c2-operator",
+      "pentest-detection-engineer",
+      "redteam-new"
+    ],
+    "flask": [
+      "bug-bounty",
+      "cybersecurity",
+      "security-arsenal",
+      "web2-recon",
+      "web2-vuln-classes"
+    ],
+    "gitlab": [
+      "bug-bounty",
+      "cicd",
+      "pentest-cicd-redteam",
+      "transilience-reconnaissance",
+      "web2-vuln-classes"
+    ],
+    "mypy": [
+      "cicd",
+      "full-bug-hunt",
+      "gentleman-ai",
+      "persist",
+      "python-init"
+    ],
+    "dvc": [
+      "ml-fundamentals",
+      "ml-new",
+      "mlops",
+      "requirements-engineering"
+    ],
+    "elasticsearch": [
+      "bug-bounty",
+      "security-arsenal",
+      "web2-recon",
+      "web2-vuln-classes"
+    ],
+    "express": [
+      "bug-bounty",
+      "find-skills",
+      "owasp-security",
+      "web2-recon"
+    ],
+    "helm": [
+      "gentleman-ai",
+      "kubernetes",
+      "ml-new",
+      "speckit-implement"
+    ],
+    "quantization": [
+      "edge-ml",
+      "inference-optimization",
+      "llm-engineering",
+      "production"
+    ],
+    "tensorflow": [
+      "docker-advanced",
+      "edge-ml",
+      "ml-fundamentals",
+      "ml-security"
+    ],
+    "tensorrt": [
+      "edge-ml",
+      "inference-optimization",
+      "llm-engineering",
+      "production"
+    ],
+    "vllm": [
+      "docker-advanced",
+      "gentleman-ai",
+      "inference-optimization",
+      "llm-engineering"
+    ],
+    "bedrock": [
+      "anthropic-sdk",
+      "langchain-dependencies",
+      "ml-new"
+    ],
+    "crewai": [
+      "ai-agents-engineering",
+      "observability-multi-agent-coordination",
+      "observability-tool-call-tracking"
+    ],
+    "distillation": [
+      "edge-ml",
+      "math-critic",
+      "pentest-llm-redteam"
+    ],
+    "onnx": [
+      "edge-ml",
+      "inference-optimization",
+      "production"
+    ],
+    "pinecone": [
+      "langchain-dependencies",
+      "langchain-rag",
+      "rag-systems"
+    ],
+    "pruning": [
+      "claude-code-patterns",
+      "edge-ml",
+      "token-optimizer"
+    ],
+    "qdrant": [
+      "gentleman-ai",
+      "langchain-dependencies",
+      "rag-systems"
+    ],
+    "qlora": [
+      "inference-optimization",
+      "llm-engineering",
+      "math-critic"
+    ],
+    "rlhf": [
+      "llm-engineering",
+      "reinforcement-learning",
+      "verbalized-sampling"
+    ],
+    "shap": [
+      "ml-new",
+      "model-interpretability",
+      "requirements-engineering"
+    ],
+    "weaviate": [
+      "langchain-dependencies",
+      "rag-systems",
+      "token-optimizer"
+    ],
+    "xgboost": [
+      "agile-ml",
+      "model-interpretability",
+      "requirements-engineering"
+    ],
+    "autogen": [
+      "ai-agents-engineering",
+      "observability-multi-agent-coordination"
+    ],
+    "chromadb": [
+      "rag-systems",
+      "token-optimizer"
+    ],
+    "django": [
+      "security-arsenal",
+      "web2-recon"
+    ],
+    "dpo": [
+      "llm-engineering",
+      "reinforcement-learning"
+    ],
+    "lime": [
+      "model-interpretability",
+      "pentest-forensics-analyst"
+    ],
+    "llamaindex": [
+      "ai-agents-engineering",
+      "rag-systems"
+    ],
+    "lora": [
+      "llm-engineering",
+      "math-critic"
+    ],
+    "pandas": [
+      "gentleman-ai",
+      "testing"
+    ],
+    "sagemaker": [
+      "ml-new",
+      "mlops"
+    ],
+    "triton": [
+      "inference-optimization",
+      "mlops"
+    ],
+    "wandb": [
+      "kubernetes",
+      "mlops"
+    ]
+  }
+}

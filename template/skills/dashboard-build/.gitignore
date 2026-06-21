@@ -1,0 +1,3 @@
+# Python bytecode cache — runtime artefact, never tracked
+__pycache__/
+*.pyc

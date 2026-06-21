@@ -1,0 +1,53 @@
+name: ci
+
+# This public repo holds only the de-personalized harness (template/) + the
+# Copier installer. The de-personalization tool (scrub.py) lives in the
+# maintainer's private repo and never ships here. CI's job is to prove no
+# personal data / secret slipped in via a contribution, and that the template
+# still renders.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  no-secrets:
+    name: no secrets / org-ids
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Org-id shape: real org-ids must never appear. Canonical example UUIDs
+      # (RFC 4122 sample + a sequential demo) are allowlisted.
+      - name: Reject non-example UUIDs in template/
+        run: |
+          if grep -rIEn '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' template/ \
+             | grep -vE '550e8400-e29b-41d4-a716-446655440000|7f6a8b9c-1234-5678-9abc-def012345678'; then
+            echo "::error::Non-example UUID in template/ — possible org-id/secret leak"; exit 1
+          fi
+      # Bare 12-digit IDs (AWS account IDs etc.) — gitleaks misses these without
+      # an arn:/AKIA prefix. The F4 audit found one leaking. 446655440000 is part
+      # of the allowlisted RFC example UUID.
+      - name: Reject bare 12-digit account IDs in template/
+        run: |
+          if grep -rIEn '\b[0-9]{12}\b' template/ | grep -vE '446655440000'; then
+            echo "::error::Bare 12-digit ID in template/ — possible account-id leak"; exit 1
+          fi
+      - name: gitleaks (generic secret material)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITLEAKS_CONFIG: .gitleaks.toml
+
+  render:
+    name: template renders
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      # A PR that breaks the template must fail here, not in a user's install.
+      - name: render smoke test (every profile renders, no stray variables)
+        run: |
+          uvx --from copier copier copy --defaults -d profile=all -d user_name="CI User" . /tmp/out
+          test -f /tmp/out/CLAUDE.md
+          if grep -rIo '⟦[^⟧]*⟧' /tmp/out; then
+            echo "::error::Unrendered Copier variable left in output"; exit 1
+          fi

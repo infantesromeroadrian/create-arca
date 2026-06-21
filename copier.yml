@@ -1,0 +1,128 @@
+# copier.yml — the questions a user answers to mint their own ARCA instance.
+#
+# `uvx create-arca` runs this wizard, then renders template/ into the target
+# (default ~/.claude). The ARCA character is the default preset; every personal
+# detail is a variable here, so the user installs ARCA-the-architect but speaks
+# as themselves. `copier update` later re-pulls new ARCA releases WITHOUT losing
+# these answers — that is what makes this a living product, not a one-shot scaffold.
+
+_subdirectory: template
+# Render EVERY file as Jinja. Copier's default only renders *.jinja files and
+# copies the rest verbatim — which would ship our {{ variables }} unsubstituted.
+# The harness files keep their real names (.md/.sh) and carry variables inline,
+# so we opt the whole template in. Foreign harness Jinja is {% raw %}-protected
+# by scrub.py, so rendering everything is safe.
+_templates_suffix: ""
+# The harness is arbitrary text — bash ${#var}, Jinja examples {{x}}/{% %},
+# Obsidian [[wikilinks]], heredocs <<. Any ASCII Jinja delimiter collides with
+# something. We move ALL of Copier's delimiters to rare Unicode brackets that
+# never appear in code/markdown, so the harness passes through literally and
+# only the ⟦ variables ⟧ scrub.py injects get rendered. No raw-guarding needed.
+_envops:
+  variable_start_string: "⟦"
+  variable_end_string: "⟧"
+  block_start_string: "⟪"
+  block_end_string: "⟫"
+  comment_start_string: "⟬"
+  comment_end_string: "⟭"
+_min_copier_version: "9.2.0"
+
+# --- Identity --------------------------------------------------------------
+user_name:
+  type: str
+  help: "Your name — the agent's principal (replaces the harness owner everywhere)"
+  default: "Your Name"
+
+user_title:
+  type: str
+  help: "How ARCA addresses you in every reply (e.g. 'Captain', 'Boss', or your surname)"
+  default: "⟦ user_name ⟧"
+
+github_user:
+  type: str
+  help: "Your GitHub username (used to detect your own repos vs work repos)"
+  default: "your-handle"
+
+user_email:
+  type: str
+  help: "Your git email (for commit identity references in the harness)"
+  default: "you@example.com"
+
+org_name:
+  type: str
+  help: "Your employer/client org name, for the work-vs-personal context detector (blank if none)"
+  default: ""
+
+host_alias:
+  type: str
+  help: "A short alias for your machine (used in host-environment notes)"
+  default: "workstation"
+
+ci_runner_label:
+  type: str
+  help: "Self-hosted CI runner label, if you use one (blank to use GitHub-hosted)"
+  default: ""
+
+host_machine:
+  type: str
+  help: "Your machine model, for host-environment notes (e.g. 'MacBook Pro M3')"
+  default: "your machine"
+
+host_os:
+  type: str
+  help: "Your OS / distro (e.g. 'Ubuntu 24.04', 'macOS 15')"
+  default: "Linux"
+
+gpu:
+  type: str
+  help: "Your GPU — calibrates the GPU/DL agents (blank or 'CPU-only' if none)"
+  default: "your GPU"
+
+vault_path:
+  type: str
+  help: "Path to your notes/Obsidian vault, for the journaling + dashboard reflexes"
+  default: "~/notes"
+
+timezone:
+  type: str
+  help: "Your city/timezone, for scheduled briefings (e.g. 'New York', 'CET')"
+  default: "your timezone"
+
+# --- Scope -----------------------------------------------------------------
+profile:
+  type: str
+  help: "Which agent domains to install? (core is always included)"
+  choices:
+    "Core only — orchestration, critics, architecture, utility": core
+    "ML — data, training, MLOps, RAG, evals (+ 14-cycle ML pipeline)": ml
+    "Security — HTB/CTF, AI red-team, bug bounty (+ HTB/ART pipelines)": security
+    "Infra — cloud, Kubernetes, serving, monitoring, networking": infra
+    "Web — frontend AI, API contracts, low-level systems": web
+    "Everything (all 59 agents + all pipelines)": all
+  default: all
+
+# --- Runtime knobs ---------------------------------------------------------
+enable_llm_judge:
+  type: bool
+  help: "Wire the local Ollama LLM-as-judge for SOFT gates? (needs Ollama; hard gates work without it)"
+  default: false
+
+treatment_tone:
+  type: str
+  help: "ARCA's tone toward you"
+  choices:
+    "Severe architect — dry, demanding, never approves on the first pass (canonical)": severe
+    "Professional — rigorous but warmer": professional
+  default: severe
+
+# Post-generation guidance (Copier prints these after rendering).
+_message_after_copy: |
+  ARCA instance created for ⟦ user_name ⟧ (profile: ⟦ profile ⟧).
+
+  Next:
+    1. Review ⟦ _copier_conf.dst_path ⟧/CLAUDE.md — that is your agent's constitution.
+    2. Open Claude Code in this directory.
+    3. Run `copier update` here whenever a new ARCA release lands.
+
+  Hard gates are active out of the box. LLM-judge soft gates are
+  ⟪ if enable_llm_judge ⟫ON (Ollama required)⟪ else ⟫OFF (deterministic lite mode)⟪ endif ⟫.

@@ -1,0 +1,17 @@
+# Agent state / agent-memory — NEVER publish. These hold tooling notes that can
+# reference exactly what the scrub removes. Out of CI/scrub scope by design, so
+# they must be ignored, not just unscanned.
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# Local render output
+/tmp-render/

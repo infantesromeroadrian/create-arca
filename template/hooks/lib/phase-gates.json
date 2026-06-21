@@ -1,0 +1,99 @@
+{
+  "_comment": "Canonical phase -> mandatory gates mapping for ARCA pipeline v4.0. Read by hooks/phase-gate-enforcer.sh on every Task() invocation. Updates here are part of pipeline policy and require ADR.",
+  "_version": "1.0.0",
+  "phases": {
+    "C1": {
+      "name": "Discovery",
+      "gates": ["project-planner"],
+      "blocking": true,
+      "artifacts": [
+        "docs/requirements/<proj>.md",
+        "docs/ml-problem-statement/<proj>.md",
+        "docs/sprints/<proj>/sprint-01.md",
+        "docs/scrum/<proj>/scrum-master.md"
+      ]
+    },
+    "C2": {
+      "name": "Data",
+      "gates": ["data-validator", "data-scientist"],
+      "blocking": ["data-validator"],
+      "artifacts": ["docs/data/<proj>/eda.md"]
+    },
+    "C3": {
+      "name": "Feature & Hypothesis",
+      "gates": ["math-critic"],
+      "blocking": ["math-critic"],
+      "artifacts": []
+    },
+    "C4": {
+      "name": "Design",
+      "gates": ["architect-ai"],
+      "blocking": ["architect-ai"],
+      "artifacts": ["docs/adr/<NNN>-*.md", "docs/architecture/<proj>.excalidraw"]
+    },
+    "C5": {
+      "name": "POC",
+      "gates": ["math-critic"],
+      "blocking": ["math-critic"],
+      "artifacts": []
+    },
+    "C6": {
+      "name": "Build",
+      "gates": ["math-critic", "debt-detector", "code-critic", "maintainability-engineer"],
+      "blocking": ["math-critic", "code-critic", "maintainability-engineer"],
+      "artifacts": []
+    },
+    "C7": {
+      "name": "MLOps",
+      "gates": ["mlops-engineer"],
+      "blocking": ["mlops-engineer"],
+      "artifacts": []
+    },
+    "C8": {
+      "name": "Quality",
+      "gates": ["math-critic", "tester", "model-evaluator", "code-critic", "maintainability-engineer"],
+      "blocking": ["model-evaluator", "code-critic", "maintainability-engineer"],
+      "artifacts": []
+    },
+    "C9": {
+      "name": "Pre-Prod",
+      "gates": ["deployment", "tester"],
+      "blocking": ["deployment", "tester"],
+      "artifacts": []
+    },
+    "C10": {
+      "name": "Deploy",
+      "gates": ["chief-architect", "ai-red-teamer", "deployment"],
+      "blocking": ["chief-architect", "ai-red-teamer"],
+      "artifacts": ["docs/deployment/<proj>/runbook.md"]
+    },
+    "C11": {
+      "name": "Post-Deploy",
+      "gates": ["deployment"],
+      "blocking": ["deployment"],
+      "artifacts": []
+    },
+    "C12": {
+      "name": "Monitoring",
+      "gates": ["monitoring", "ai-red-teamer"],
+      "blocking": ["monitoring"],
+      "artifacts": ["docs/monitoring/<proj>/dashboards.md"]
+    },
+    "C13": {
+      "name": "Governance & Loop",
+      "gates": ["mlops-engineer"],
+      "blocking": ["mlops-engineer"],
+      "artifacts": []
+    },
+    "C14": {
+      "name": "Sunset",
+      "gates": ["chief-architect", "architect-ai"],
+      "blocking": ["chief-architect"],
+      "artifacts": ["docs/sunset/<proj>/post-mortem.md"]
+    }
+  },
+  "transitions": {
+    "_comment": "C(n) -> C(n+1) requires ALL blocking gates of C(n) signed in Engram within last 30 days.",
+    "max_signature_age_days": 30
+  }
+}

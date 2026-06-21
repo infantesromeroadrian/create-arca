@@ -1,0 +1,734 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "ARCA_PREFLIGHT_ENFORCE": "1",
+    "ENABLE_PROMPT_CACHING_1H": "1",
+    "CLAUDE_CODE_FORK_SUBAGENT": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "Write(**/.claude/briefing/**)",
+      "Write(**/.claude/ambient-config.json)",
+      "Write(**/.claude/ambient-state.json)",
+      "Write(**/.claude/ambient-hud.json)",
+      "Edit(**/.claude/briefing/**)",
+      "mcp__atlassian-⟦ org_name ⟧__*",
+      "mcp__atlassian__*",
+      "mcp__brave__*",
+      "mcp__canva__*",
+      "mcp__chrome-devtools-⟦ org_name ⟧__*",
+      "mcp__chrome-devtools__*",
+      "mcp__codegraph__*",
+      "mcp__context7__*",
+      "mcp__docker__*",
+      "mcp__engram__*",
+      "mcp__exa__*",
+      "mcp__fetch__*",
+      "mcp__filesystem__*",
+      "mcp__firecrawl__*",
+      "mcp__github__*",
+      "mcp__gitlab__*",
+      "mcp__htb-mcp-ctf__*",
+      "mcp__htb__*",
+      "mcp__kaggle__*",
+      "mcp__langsmith__*",
+      "mcp__linear__*",
+      "mcp__linkedin__*",
+      "mcp__ms-365__*",
+      "mcp__obsidian__*",
+      "mcp__playwright-client__*",
+      "mcp__playwright-⟦ org_name ⟧__*",
+      "mcp__postgresql__*",
+      "mcp__sequential-thinking__*",
+      "mcp__skills__*",
+      "mcp__taskmaster-ai__*",
+      "mcp__terraform__*",
+      "mcp__wolfram-alpha__*"
+    ],
+    "deny": [
+      "Bash(sudo rm -rf /*)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf ~*)",
+      "Bash(rm -rf $HOME*)",
+      "Bash(rm -rf ./*)",
+      "Bash(rm --no-preserve-root *)",
+      "Write(**/.ssh/**)",
+      "Write(**/id_rsa*)",
+      "Write(**/id_ed25519*)",
+      "Write(**/id_ecdsa*)",
+      "Write(**/authorized_keys*)",
+      "Write(**/.aws/**)",
+      "Write(**/.gnupg/**)",
+      "Write(**/.kube/**)",
+      "Write(**/.config/gcloud/**)",
+      "Write(**/.azure/**)",
+      "Write(**/.kaggle/kaggle.json)",
+      "Write(**/.docker/config.json)",
+      "Write(**/.netrc)",
+      "Write(**/.bashrc)",
+      "Write(**/.zshrc)",
+      "Write(**/.profile)",
+      "Edit(**/.ssh/**)",
+      "Edit(**/id_rsa*)",
+      "Edit(**/id_ed25519*)",
+      "Edit(**/id_ecdsa*)",
+      "Edit(**/authorized_keys*)",
+      "Edit(**/.aws/**)",
+      "Edit(**/.gnupg/**)",
+      "Edit(**/.kube/**)",
+      "Edit(**/.config/gcloud/**)",
+      "Edit(**/.azure/**)",
+      "Edit(**/.kaggle/kaggle.json)",
+      "Edit(**/.docker/config.json)",
+      "Edit(**/.netrc)",
+      "Edit(**/.bashrc)",
+      "Edit(**/.zshrc)",
+      "Edit(**/.profile)",
+      "Read(**/.ssh/**)",
+      "Read(**/id_rsa*)",
+      "Read(**/id_ed25519*)",
+      "Read(**/id_ecdsa*)",
+      "Read(**/.aws/**)",
+      "Read(**/.gnupg/**)",
+      "Read(**/.kube/**)",
+      "Read(**/.config/gcloud/**)",
+      "Read(**/.azure/**)",
+      "Read(**/.kaggle/kaggle.json)",
+      "Read(**/.docker/config.json)",
+      "Read(**/.netrc)"
+    ],
+    "defaultMode": "default"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/test-first-gate.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "El contenido que está a punto de escribirse es:\n\n```\n{{ tool_input.content or tool_input.new_string }}\n```\n\nPath destino: {{ tool_input.file_path }}\n\n¿Contiene algún secreto REAL (no placeholder, no variable de entorno, no ejemplo de documentación)? Responde SOLO una palabra: ALLOW o DENY.",
+            "if": "Write(**/settings.json)",
+            "timeout": 15
+          },
+          {
+            "type": "prompt",
+            "prompt": "El contenido que está a punto de escribirse es:\n\n```\n{{ tool_input.content or tool_input.new_string }}\n```\n\nPath destino: {{ tool_input.file_path }}\n\n¿Contiene algún secreto REAL (no placeholder, no variable de entorno, no ejemplo de documentación)? Responde SOLO una palabra: ALLOW o DENY.",
+            "if": "Write(**/.env*)",
+            "timeout": 15
+          },
+          {
+            "type": "prompt",
+            "prompt": "El contenido que está a punto de escribirse es:\n\n```\n{{ tool_input.content or tool_input.new_string }}\n```\n\nPath destino: {{ tool_input.file_path }}\n\n¿Contiene algún secreto REAL (no placeholder, no variable de entorno, no ejemplo de documentación)? Responde SOLO una palabra: ALLOW o DENY.",
+            "if": "Write(**/*config*.json)",
+            "timeout": 15
+          },
+          {
+            "type": "prompt",
+            "prompt": "El contenido que está a punto de escribirse es:\n\n```\n{{ tool_input.content or tool_input.new_string }}\n```\n\nPath destino: {{ tool_input.file_path }}\n\n¿Contiene algún secreto REAL (no placeholder, no variable de entorno, no ejemplo de documentación)? Responde SOLO una palabra: ALLOW o DENY.",
+            "if": "Write(**/*.tfvars)",
+            "timeout": 15
+          },
+          {
+            "type": "prompt",
+            "prompt": "El contenido que está a punto de escribirse es:\n\n```\n{{ tool_input.content or tool_input.new_string }}\n```\n\nPath destino: {{ tool_input.file_path }}\n\n¿Contiene algún secreto REAL (no placeholder, no variable de entorno, no ejemplo de documentación)? Responde SOLO una palabra: ALLOW o DENY.",
+            "if": "Edit(**/settings.json)",
+            "timeout": 15
+          },
+          {
+            "type": "prompt",
+            "prompt": "El contenido que está a punto de escribirse es:\n\n```\n{{ tool_input.content or tool_input.new_string }}\n```\n\nPath destino: {{ tool_input.file_path }}\n\n¿Contiene algún secreto REAL (no placeholder, no variable de entorno, no ejemplo de documentación)? Responde SOLO una palabra: ALLOW o DENY.",
+            "if": "Edit(**/.env*)",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/block-dangerous.sh"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/pr-merge-comprehension-gate.sh",
+            "timeout": 120
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/detect-secrets.sh"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/mcp-frontmatter-parity.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/prompt_injection_check.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/client-leak-gate.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/git-commit-validator.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/worktree-isolation-enforcer.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/scheduled-git-deny.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/math-critic-advisor.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/delegation-preflight-enforcer.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/skill-router-hybrid-injector.sh",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/agent-running-tracker.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/prompt-critical-paths-guard.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/block-sensitive-reads.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/log-activity.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/skill-extractor.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/command_logger.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/test-first-gate.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/routing-nudge.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/spec-drift-detector.sh",
+            "timeout": 8
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/debug-loop-detector.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/uncommitted-work-detector.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/session-fatigue-detector.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/critic-feedback-tracker.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/agent-invocation-logger.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/math-critic-gate-enforcer.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/code-critic-gate-enforcer.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/dynamic-orchestration-gate-enforcer.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/auto-adr-detector.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/hud-state-writer.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/agent-running-cleanup.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/claude-md-sync-detector.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/skill-catalog-drift-detector.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/ml-code-store-duplication-detector.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/eval-suite-coverage-detector.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/adr-namespace-validator.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/backlog-format-validator.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/skill-telemetry.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/post-tool-secrets-mask.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/obsidian-session-close.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/repo-mirror-sync.sh",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/engram-snapshot-on-stop.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/session_start.sh",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/auto-tune-aging-detector.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/orchestration-reflex.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/user-prompt-context-injector.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/engram-prompt-capture.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/session-title-from-first-prompt.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/session-id-marker.sh",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/phase-transition-detector.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/slash-command-telemetry.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/pre-compact-engram-checkpoint.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "TaskCreated": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/task-created-audit.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/task-completed-log.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "TeammateIdle": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/teammate-idle-tracker.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/post-tool-use-failure-telemetry.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/test-first-gate.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/session-end-close.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash $HOME/.claude/scripts/statusline.sh"
+  },
+  "enabledPlugins": {
+    "engram@engram": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "aikido@claude-plugins-official": true,
+    "hackingtool@hackingtool-marketplace": true,
+    "clangd-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "engram": {
+      "source": {
+        "source": "github",
+        "repo": "Gentleman-Programming/engram"
+      }
+    },
+    "hackingtool-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "AKCodez/hackingtool-plugin"
+      }
+    }
+  },
+  "language": "Español",
+  "effortLevel": "xhigh",
+  "autoMemoryEnabled": true,
+  "autoDreamEnabled": false,
+  "remoteControlAtStartup": false,
+  "agentPushNotifEnabled": false,
+  "voiceEnabled": false,
+  "mcpServers": {
+    "gmail": {
+      "type": "url",
+      "url": "https://gmail.mcp.claude.com/mcp"
+    }
+  },
+  "remoteControlEnabled": false,
+  "preferences": {
+    "autoDreamEnabled": true
+  }
+}

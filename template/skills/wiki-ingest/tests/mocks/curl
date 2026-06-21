@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# Mock curl for tests. Behavior controlled by MOCK_CURL_MODE env.
+#   ok            — abs page returns HTML fixture, PDF fetch writes pdf_extracted.txt
+#   abs_fail      — abs page fetch fails
+#   pdf_fail      — abs page OK, PDF fetch fails
+
+set -euo pipefail
+MODE="${MOCK_CURL_MODE:-ok}"
+FIXTURES="${MOCK_FIXTURES_DIR:?MOCK_FIXTURES_DIR not set}"
+
+# Find URL (last positional arg after --)
+url=""
+seen_dd=0
+output=""
+prev=""
+for arg in "$@"; do
+  if [[ "$seen_dd" == 1 ]]; then
+    url="$arg"
+    break
+  fi
+  if [[ "$arg" == "--" ]]; then
+    seen_dd=1
+    continue
+  fi
+  if [[ "$prev" == "-o" ]]; then
+    output="$arg"
+  fi
+  prev="$arg"
+done
+
+# Fall back: pick last arg if no --
+if [[ -z "$url" ]]; then
+  for arg in "$@"; do url="$arg"; done
+fi
+
+case "$url" in
+  *arxiv.org/abs/*)
+    [[ "$MODE" == "abs_fail" ]] && exit 22
+    cat "$FIXTURES/arxiv_abs.html"
+    ;;
+  *arxiv.org/pdf/*)
+    [[ "$MODE" == "pdf_fail" ]] && exit 22
+    if [[ -n "$output" ]]; then
+      cp "$FIXTURES/pdf_extracted.txt" "$output"
+    else
+      cat "$FIXTURES/pdf_extracted.txt"
+    fi
+    ;;
+  *)
+    echo "curl mock: unknown URL $url" >&2
+    exit 22
+    ;;
+esac

@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# Mock yt-dlp for tests. Behavior controlled by MOCK_YT_DLP_MODE env.
+#   ok        — return metadata JSON, write VTT subs file
+#   no_subs   — metadata OK, fail subs fetch
+#   meta_fail — fail metadata fetch (exit 1)
+#   subs_only_no_file — sub fetch returns 0 but no file produced
+
+set -euo pipefail
+MODE="${MOCK_YT_DLP_MODE:-ok}"
+FIXTURES="${MOCK_FIXTURES_DIR:?MOCK_FIXTURES_DIR not set}"
+
+# Detect mode: --print means metadata JSON, --write-auto-subs means subs.
+is_meta=0
+is_subs=0
+out_template=""
+for arg in "$@"; do
+  case "$arg" in
+    --print) is_meta=1 ;;
+    --write-auto-subs) is_subs=1 ;;
+  esac
+done
+# Capture -o argument value
+prev=""
+for arg in "$@"; do
+  if [[ "$prev" == "-o" ]]; then out_template="$arg"; fi
+  prev="$arg"
+done
+
+if (( is_meta )); then
+  if [[ "$MODE" == "meta_fail" ]]; then
+    echo "yt-dlp: mocked metadata failure" >&2
+    exit 1
+  fi
+  cat "$FIXTURES/youtube_meta.json"
+  exit 0
+fi
+
+if (( is_subs )); then
+  if [[ "$MODE" == "no_subs" ]]; then
+    echo "yt-dlp: mocked subs fetch failure" >&2
+    exit 1
+  fi
+  if [[ "$MODE" == "subs_only_no_file" ]]; then
+    exit 0
+  fi
+  # Resolve %(id)s.%(ext)s into dQw4w9WgXcQ.vtt under the dir from -o template.
+  out_dir=$(dirname "$out_template")
+  cp "$FIXTURES/sample.vtt" "$out_dir/dQw4w9WgXcQ.vtt"
+  exit 0
+fi
+
+echo "yt-dlp mock: unknown invocation pattern" >&2
+exit 1

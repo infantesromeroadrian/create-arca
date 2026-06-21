@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Mock pdftotext. Args: [-layout] -- INPUT [OUTPUT|-]
+# We ignore -layout, find INPUT (the .pdf path), and emit pdf_extracted.txt to stdout.
+set -euo pipefail
+FIXTURES="${MOCK_FIXTURES_DIR:?MOCK_FIXTURES_DIR not set}"
+
+MODE="${MOCK_PDFTOTEXT_MODE:-ok}"
+[[ "$MODE" == "fail" ]] && exit 1
+
+# Always emit the extracted-text fixture to stdout (script uses `- 2>/dev/null`).
+cat "$FIXTURES/pdf_extracted.txt"

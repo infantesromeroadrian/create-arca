@@ -1,0 +1,13 @@
+# gitleaks config for create-arca — the third pillar of the scrub defense.
+#
+# scrub.py + the UUID grep in ci.yml cover identity markers and the org-id.
+# gitleaks covers GENERIC secret material (private keys, cloud/API tokens) that
+# could theoretically slip into the harness and survive into template/.
+#
+# We start from gitleaks' maintained default ruleset and add no allowlist: the
+# published template should contain zero real credentials, so any hit is a bug.
+
+title = "create-arca gitleaks config"
+
+[extend]
+useDefault = true

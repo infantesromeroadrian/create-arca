@@ -1,0 +1,13 @@
+# sensitive-paths.allowlist — opt-in exceptions to block-sensitive-reads.sh.
+#
+# Format: one path per line. Globbing supported via bash [[ -pattern ]].
+# Comment lines start with #. Empty lines ignored.
+#
+# When to add an entry:
+#   - You are doing a CTF/lab where reading ~/.aws/credentials is the exercise.
+#   - You are running a one-shot audit and accept the leak risk.
+# Remove the entry as soon as the task is done.
+
+# Example (uncomment to enable):
+# ~/.aws/credentials
+# ~/.config/opencode/opencode.json

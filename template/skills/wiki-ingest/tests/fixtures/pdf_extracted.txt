@@ -1,0 +1,7 @@
+                          Mock PDF Title
+
+This is the extracted plain text from a mocked PDF.
+Page 1 content.
+
+                          Section 2
+More content here on a second mock page.

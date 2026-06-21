@@ -1,0 +1,12 @@
+# ADR-037: meta-ecosystem repos that MUST NOT have pipeline state.
+# One basename per line. Lines starting with # are comments.
+#
+# Rationale: these repos are NOT ML pipelines — they are the ARCA ecosystem
+# itself. Phase-gate enforcement is meaningless here.
+#
+# To override (e.g. genuinely treating ecosystem work as a pipeline), set
+# env var ARCA_PIPELINE_FORCE_INIT=1 before invoking the offending command.
+
+.claude
+your-snapshots-repo
+your-vault-repo

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://arca/orchestration-proposal-schema.json",
+  "title": "ARCA Orchestration Proposal (ADR-089)",
+  "_comment": "Contract for the Orchestration Proposal that @architect-ai emits on /orchestrate. The structural schema (properties) documents the shape; x-node-type-gate-floor encodes the Layer-1 critic floor that validate-orchestration-proposal.sh enforces. Same declarative shape as hooks/lib/phase-gates.json blocking[], generalized from fixed-cycle to per-node. Updates here are pipeline policy and require an ADR.",
+  "_version": "1.0.0",
+  "type": "object",
+  "required": ["schema_version", "project", "task", "cadence", "nodes", "preflight", "approval"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project": { "type": "string", "minLength": 1 },
+    "task": { "type": "string", "minLength": 1 },
+    "cadence": { "enum": ["per-project", "per-thread"] },
+    "template_recommendation": {
+      "enum": ["none", "ml", "htb", "art"],
+      "_comment": "If != none, the planner ADVISES using the fixed pipeline (/ml-new, /htb-new, /redteam-new) instead of this bespoke DAG. Borrowed-from-C idea (ADR-089): dynamic mode never re-derives a battle-tested flow."
+    },
+    "compound_handoff": {
+      "type": "boolean",
+      "_comment": "true -> the DAG trips the compound decision matrix (>2 coordinated LLM calls / verifier-in-loop / multi-provider) -> @architect-ai hands design to @compound-ai-architect."
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "agent", "depends_on", "isolation", "success_criteria", "blocking_gates"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "agent": { "type": "string", "minLength": 1 },
+          "depends_on": { "type": "array", "items": { "type": "string" } },
+          "isolation": { "enum": ["worktree", "none"] },
+          "success_criteria": { "type": "string", "minLength": 1 },
+          "blocking_gates": {
+            "type": "array",
+            "items": { "type": "string" },
+            "_comment": "Adversarial co-agents / critics that gate THIS node's output. Validator rejects if the floor (x-node-type-gate-floor) is under-declared."
+          },
+          "role": { "type": "string" },
+          "is_terminal_closer": {
+            "type": "boolean",
+            "_comment": "Marks the terminal node of the DAG. The runtime hook dynamic-orchestration-gate-enforcer.sh treats it as an additional phase-closer, so a code-producing DAG that does NOT end on chief-architect/deployment still trips the code-critic gate at runtime. Closes the gap noted in ADR-089."
+          },
+          "produces_deployable": {
+            "type": "boolean",
+            "_comment": "Node emits a deployable / serving artifact -> floor requires code-critic + chief-architect downstream."
+          },
+          "hits_adversarial_signals": {
+            "type": "boolean",
+            "_comment": "Node invokes an LLM in a way that hits the 7 adversarial signals (public endpoint, auth, PII, prod LLM, unvalidated input, file upload, external integration) -> floor requires ai-red-teamer."
+          }
+        }
+      }
+    },
+    "preflight": {
+      "type": "object",
+      "required": ["token_optimizer", "skill_router"],
+      "properties": {
+        "token_optimizer": { "const": "required" },
+        "skill_router": { "const": "required" }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "enum": ["PENDING_⟦ user_name ⟧", "APPROVED"],
+          "_comment": "NO node executes until status == APPROVED. Schema-mandated approval gate (Hard Constraint #2d)."
+        }
+      }
+    },
+    "persistence": {
+      "type": "object",
+      "properties": {
+        "engram_key": { "type": "string" },
+        "file": { "type": "string" }
+      }
+    }
+  },
+
+  "x-node-type-gate-floor": {
+    "_comment": "Layer-1 critic floor. validate-orchestration-proposal.sh rejects any proposal where a node under-declares these gates. required_gates_in_order is an ORDERED SUBSEQUENCE check against the node's blocking_gates[]: the gates must appear in this relative order (gaps allowed). Math-producers are also code-producers but get the stricter chain; the validator applies the FIRST matching category.",
+    "categories": [
+      {
+        "id": "math_producers",
+        "agents": ["ml-engineer", "dl-engineer", "ai-engineer"],
+        "required_gates_in_order": ["math-critic", "debt-detector", "code-critic"]
+      },
+      {
+        "id": "code_producers",
+        "agents": [
+          "ai-production-engineer", "data-engineer", "python-specialist",
+          "tester", "devops", "deployment", "monitoring", "api-designer",
+          "frontend-ai", "mlops-engineer", "aws-engineer", "rag-engineer",
+          "agent-engineer", "gpu-engineer"
+        ],
+        "required_gates_in_order": ["debt-detector", "code-critic"]
+      }
+    ],
+    "flag_rules": {
+      "produces_deployable": {
+        "required_gates_in_order": ["code-critic", "chief-architect"]
+      },
+      "hits_adversarial_signals": {
+        "required_gates_in_order": ["ai-red-teamer"]
+      }
+    },
+    "global_rules": {
+      "code_producing_dag_requires_terminal_closer": true,
+      "_comment_terminal": "If ANY node is a math/code producer, the proposal MUST declare >=1 node with is_terminal_closer:true. This is what lets the runtime hook close the gap.",
+      "preflight_required": true,
+      "approval_gate_required": true
+    }
+  }
+}
